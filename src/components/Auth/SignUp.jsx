@@ -9,7 +9,6 @@ const SignUp = () => {
     return (
         <div className="container-fluid">
             <main className="row">
-
                 <section className="col-md-6" id="panel-left">
                     <div className="container align-self-center">
                         <div className="row">
