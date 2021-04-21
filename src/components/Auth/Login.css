@@ -2,7 +2,7 @@
     --c-primary-login: #917135;
 }
 
-main {
+ main {
     height: 100vh;
     display: flex;
     flex-direction: row;
