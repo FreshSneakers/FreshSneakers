@@ -2,11 +2,6 @@
     --c-primary-login: #917135;
 }
 
-* {
-    font-family: 'Red Hat Display', sans-serif;
-    text-decoration: none;
-}
-
 main {
     height: 100vh;
     display: flex;
@@ -16,7 +11,7 @@ main {
 #panel-left {
     display: flex !important;
     align-items: center;
-    background-image: url('https://images.unsplash.com/photo-1603036050141-c61fde866f5c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHNuZWFrZXJzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');
+    background-image: url('https://images.unsplash.com/photo-1601258857152-0d671cd4440f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=882&q=80');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -31,13 +26,13 @@ main {
 .title {
     font-size: 55px;
     font-weight: 900;
-    color: #fff;
+    color: #E37772;
 }
 
 .description {
     font-size: 30px;
     font-weight: 900;
-    color: #fff;
+    color: #E37772;
 }
 
 #panel-left .logo-container svg {
@@ -47,6 +42,19 @@ main {
 @media only screen and (max-width: 767px) {
     #panel-left {
         display: none !important;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .title {
+        font-size: 45px;
+        font-weight: 900;
+        color: #E37772;
+    }
+    .description {
+        font-size: 23px;
+        font-weight: 900;
+        color: #E37772;
     }
 }
 
