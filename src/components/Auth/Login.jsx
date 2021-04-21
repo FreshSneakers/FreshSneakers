@@ -1,17 +1,21 @@
 import React from "react";
 import "../Auth/Login.css";
+import { BsPersonFill } from "react-icons/bs";
+import { BsEnvelopeFill } from "react-icons/bs";
+import { BsFillLockFill } from "react-icons/bs";
+import { BsFillHouseDoorFill } from "react-icons/bs";
 
 const Login = () => {
   return (
-    <div classNameName="container-fluid">
-      <main className="row ">
-        <section className="col-md-6" id="panel-left">
+    <div className="container-fluid">
+      <main className="row">
+        <section className="col-md-6" id="login__panel-left">
           <div className="container align-self-center">
             <div className="row">
-              <h1 className="col-12 text-center">FreshSneakers</h1>
+              <h1 className="col-12 text-center login__title">FreshSneakers</h1>
             </div>
             <div className="row">
-              <p className="col-12 text-center description">
+              <p className="col-12 text-center login__description">
                 Welcome to the world of sneakers
               </p>
             </div>
@@ -21,52 +25,53 @@ const Login = () => {
           </div>
         </section>
 
-        <section className="col-md-6" id="panel-right">
-          <div className="container">
-            <div className="row mb-5">
-              <h2 className="col-12 text-center">Log in</h2>
-            </div>
-            <div className="row">
-              <form action="#" className="col-12 col-md-8 offset-md-2" autoComplete='off'>
-                <div className="form-group">
+        <section
+          className="col-md-6 d-flex justify-content-center"
+          id="panel-right"
+        >
+          <div className="login__container">
+            <form autoComplete="off">
+              <img className="avatar" src="/img/perfil-auth.png" alt="perfil" />
+              <h2>Login</h2>
+
+              <div className="input-div two">
+                <div className="i">
+                  <BsEnvelopeFill />
+                </div>
+                <div>
                   <input
+                    className="input"
                     type="email"
-                    className="form-control"
                     name="email"
-                    id="email"
-                    placeholder="Correo electrónico"
+                    placeholder="Email"
                     required
                   />
-                </div>
-                <div className="form-group">
-                  <input
-                    type="password"
-                    className="form-control"
-                    name="password"
-                    id="password"
-                    placeholder="Contraseña"
-                    required
-                  />
-                </div>
-                <div className="form-group text-center pt-4">
-                  <input
-                    type="submit"
-                    className="btn btn-primary"
-                    value="Ingresar"
-                  />
-                </div>
-              </form>
-            </div>
-            <div className="row mt-5">
-              <div className="col-12 links text-center">
-                <div>
-                  <a href="#">forgot my password</a>
-                </div>
-                <div>
-                  <a href="#">create an account</a>
                 </div>
               </div>
-            </div>
+              <div className="input-div two">
+                <div className="i">
+                  <BsFillLockFill />
+                </div>
+                <div>
+                  <input
+                    className="input"
+                    type="password"
+                    name="password"
+                    placeholder="password"
+                    required
+                  />
+                </div>
+              </div>
+
+              <a
+                href="/forgot"
+                style={{ textDecoration: "none" }}
+                className="login__forgot"
+              >
+                Forgot Pasword
+              </a>
+              <input className="btn__log" type="submit" value="Login" />
+            </form>
           </div>
         </section>
       </main>
