@@ -5,7 +5,6 @@ import { BsEnvelopeFill } from "react-icons/bs";
 import { BsFillLockFill } from "react-icons/bs";
 import { BsFillHouseDoorFill } from "react-icons/bs";
 
-
 const SignUp = () => {
     return (
         <div className="container-fluid">
