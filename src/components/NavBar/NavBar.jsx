@@ -1,6 +1,5 @@
 import React from 'react';
-import { BsPersonFill } from "react-icons/bs";
-import { BsFillBagFill } from "react-icons/bs";
+import {Link} from "react-router-dom"
 
 const NavBar = () => {
     return (
