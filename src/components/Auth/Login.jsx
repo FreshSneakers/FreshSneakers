@@ -106,14 +106,7 @@ const {errors}= state
       <main className="row">
         <section className="col-md-6" id="login__panel-left">
           <div className="container align-self-center">
-            <div className="row">
-              <h1 className="col-12 text-center login__title">FreshSneakers</h1>
-            </div>
-            <div className="row">
-              <p className="col-12 text-center login__description">
-                Welcome to the world of sneakers
-              </p>
-            </div>
+            
             <div className="row mt-5">
               <div className="col-12 logo-container d-flex justify-content-center"></div>
             </div>
@@ -125,8 +118,8 @@ const {errors}= state
           id="panel-right"
         >
           <div className="login__container">
-            <form onSubmit={onsubmit} autoComplete="off">
-              <img className="avatar" src="/img/perfil-auth.png" alt="perfil" />
+            <form autoComplete="off" onSubmit={onsubmit} className="login__form">
+              <img className="avatar" src="/img/logo.png" alt="perfil" />
               <h2>Login</h2>
 
               <div className="input-div two">
@@ -161,7 +154,7 @@ const {errors}= state
                     onChange={onChange}
                     onBlur = {onBlur}
                     onFocus = {onFocus}
-                    placeholder="password"
+                    placeholder="Password"
                     required
                   />
                     <div className="invalid-feedback">{errors.email}</div>

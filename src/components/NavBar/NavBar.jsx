@@ -4,42 +4,36 @@ import { BsFillBagFill } from "react-icons/bs";
 
 const NavBar = () => {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/">Logo</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+        <nav className="navbar navbar-expand-lg navbar-light bg-dark" >
+            <div className="container-fluid">
+                <Link className="navbar-brand" to="/" style={{ color: '#FFF' }}>Logo</Link>
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon" style={{ color: '#FFF' }}></span>
+                </button>
 
                 <div className="collapse navbar-collapse ml-5" id="navbarSupportedContent">
                     <ul className="navbar-nav m-auto">
                         <li className="nav-item">
-                            <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
+                            <Link className="nav-link" style={{ color: '#FFF' }} to="/">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/">Buy</a>
+                            <Link className="nav-link" style={{ color: '#FFF' }} to="/buy">Buy</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/">Sell</a>
+                            <Link className="nav-link" style={{ color: '#FFF' }} to="/sell">Sell</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link " href="/">Auction</a>
+                            <Link className="nav-link" style={{ color: '#FFF' }} to="/auction">Auction</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link " href="/">Contact us </a>
+                            <Link className="nav-link" style={{ color: '#FFF' }} to="/contact-us">Contact us </Link>
                         </li>
-                        <form className="form-inline my-2 my-lg-0 ">
-                            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                        </form>
 
                     </ul>
-                    <div className="i d-flex justify-content-start mr-5">
-                        <BsPersonFill />
-                    </div>
-                    <div className="i d-flex justify-content-start">
-                        <BsFillBagFill />
-                    </div>
+
+                    <Link className="nav-link" style={{ color: '#FFF' }} to="/login">Login</Link>
+                    <Link className="nav-link" style={{ color: '#FFF' }} to="/signup">Sign Up</Link>
+                    <img src="./img/shopping-cart.png" alt="cart" style={{ height: '25px' }} />
                 </div>
             </div>
         </nav>

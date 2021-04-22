@@ -20,7 +20,7 @@ main {
 #panel-right {
     display: flex !important;
     align-items: center;
-    background-color: #F1F6F9;
+    background-color: #ffffff;
 }
 
 .title {
@@ -45,7 +45,7 @@ main {
     }
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 1000px) {
     .title {
         font-size: 45px;
         font-weight: 900;
@@ -65,7 +65,7 @@ main {
     border: 20px;
 }
 
-form {
+.sign__form {
     width: 360px;
 }
 
@@ -73,7 +73,7 @@ form {
     width: 100px;
 }
 
-form h2 {
+.sign__form h2 {
     font-size: 2.9rem;
     text-transform: uppercase;
     margin: 15px 0;
