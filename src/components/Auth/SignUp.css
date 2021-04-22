@@ -1,14 +1,14 @@
 :root {
-    --c-primary-login: #917135;
+    --c-primary-signup: #917135;
 }
 
-main {
+.signup__main {
     height: 100vh;
     display: flex;
     flex-direction: row;
 }
 
-#panel-left {
+#signup__panel__left {
     display: flex !important;
     align-items: center;
     background-image: url('https://images.unsplash.com/photo-1601258857152-0d671cd4440f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=882&q=80');
@@ -17,48 +17,19 @@ main {
     background-size: cover;
 }
 
-#panel-right {
+#signup__panel__right {
     display: flex !important;
     align-items: center;
     background-color: #ffffff;
 }
 
-.title {
-    font-size: 55px;
-    font-weight: 900;
-    color: #E37772;
-}
-
-.description {
-    font-size: 30px;
-    font-weight: 900;
-    color: #E37772;
-}
-
-#panel-left .logo-container svg {
-    width: 220px;
-}
-
 @media only screen and (max-width: 767px) {
-    #panel-left {
+    #signup__panel__left {
         display: none !important;
     }
 }
 
-@media only screen and (max-width: 1000px) {
-    .title {
-        font-size: 45px;
-        font-weight: 900;
-        color: #E37772;
-    }
-    .description {
-        font-size: 23px;
-        font-weight: 900;
-        color: #E37772;
-    }
-}
-
-.login-container {
+.signup__container {
     display: flex;
     align-items: center;
     text-align: center;
@@ -69,7 +40,7 @@ main {
     width: 360px;
 }
 
-.avatar {
+.signup__avatar {
     width: 100px;
 }
 
@@ -77,25 +48,25 @@ main {
     font-size: 2.9rem;
     text-transform: uppercase;
     margin: 15px 0;
-    color: var(--c-primary-login);
+    color: var(--c-primary-signup);
 }
 
-.input-div {
+.signup__input__div {
     position: relative;
     display: grid;
     grid-template-columns: 7% 93%;
     margin: 25px 0;
     padding: 5px;
-    border-bottom: 2px solid var(--c-primary-login);
+    border-bottom: 2px solid var(--c-primary-signup);
 }
 
-.input-div:after, .input-div:before {
+.signup__input__div:after, .signup__input__div:before {
     content: '';
     position: absolute;
     bottom: -2px;
     width: 0;
     height: 2px;
-    background-color: var(--c-primary-login);
+    background-color: var(--c-primary-signup);
     transition: .3s;
 }
 
@@ -103,15 +74,15 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--c-primary-login);
+    color: var(--c-primary-signup);
 }
 
-.input-div>div {
+.signup__input__div>div {
     position: relative;
     height: 45px;
 }
 
-.input {
+.signup__input {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -123,7 +94,7 @@ main {
     padding: 0.5rem 0.7rem;
 }
 
-.btn__log {
+.signup__btn {
     display: block;
     width: 100%;
     height: 50px;
@@ -132,26 +103,11 @@ main {
     font-size: 1.2rem;
     outline: none;
     border: none;
-    background-image: linear-gradient(to right, #917135, #917135, #917135);
+    background-image: linear-gradient(to right, #917135, #977942, #9e7f44);
     cursor: pointer;
     color: #fff;
     text-transform: uppercase;
     font-family: 'Poppins', sans-serif;
     background-size: 200%;
     transition: .5s;
-}
-
-.forgot {
-    display: block;
-    text-align: right;
-    text-decoration: none;
-    color: #999;
-    margin-top: 10px;
-    font-size: 0.9rem;
-    transition: .3s;
-    text-decoration: none;
-}
-
-.btn:hover {
-    background-position: right;
 }
