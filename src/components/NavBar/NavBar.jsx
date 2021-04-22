@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { BsPersonFill } from "react-icons/bs";
 import { BsFillBagFill } from "react-icons/bs";
 
