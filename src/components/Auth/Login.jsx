@@ -25,7 +25,7 @@ const validators = {
 
         if(!value){
             message = 'Password is required'
-        }else if(value.length <= 8){
+        }else if(value && !PASSWORD_PATTERN.test(value)){
             message = 'Password must have 8 characters or more'
         }
 
@@ -54,6 +54,7 @@ const Login = () => {
     }
 
     const onSubmit = (e)=> {
+        const {fields} = state
         e.preventDefault()
 
         if(isvalid()){
@@ -67,7 +68,7 @@ const Login = () => {
         //Hacemos cambio de estado y nos quedamos con el valor anterior (prevState) y retornar un objeto
         setState((prevState) =>({
             fields: {
-                ...prevState.fields,//Hacemos copis de lo que teniamos y modificamos el campo que queremos
+                ...prevState.fields,//Hacemos copia de lo que teniamos y modificamos el campo que queremos
                 [name]: value
             },
             errors: {
@@ -118,7 +119,7 @@ const {errors}= state
           id="panel-right"
         >
           <div className="login__container">
-            <form autoComplete="off" onSubmit={onsubmit} className="login__form">
+            <form autoComplete="off" onSubmit={onSubmit} className="login__form">
               <img className="avatar" src="/img/logo.png" alt="perfil" />
               <h2>Login</h2>
 
@@ -157,7 +158,7 @@ const {errors}= state
                     placeholder="Password"
                     required
                   />
-                    <div className="invalid-feedback">{errors.email}</div>
+                    <div className="invalid-feedback">{errors.password}</div>
                 </div>
               </div>
 
@@ -168,7 +169,7 @@ const {errors}= state
               >
                 Forgot Pasword
               </a>
-              <input className="btn__log" type="submit" value="Login" onSubmit={onSubmit} />
+              <input className="btn__log" type="submit" value="Login"  />
             </form>
           </div>
         </section>
