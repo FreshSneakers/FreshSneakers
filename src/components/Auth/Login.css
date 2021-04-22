@@ -2,7 +2,7 @@
     --c-primary-login: #917135;
 }
 
- main {
+main {
     height: 100vh;
     display: flex;
     flex-direction: row;
@@ -11,7 +11,7 @@
 #login__panel-left {
     display: flex !important;
     align-items: center;
-    background-image: url('https://images.unsplash.com/photo-1586676453553-e033956389d1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDE5fHxzbmVha2Vyc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');
+    background-image: url('https://images.unsplash.com/photo-1587502322190-b8adf9732478?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -20,13 +20,13 @@
 #panel-right {
     display: flex !important;
     align-items: center;
-    background-color: #F1F6F9;
+    background-color: #ffffff;
 }
 
-.login__title{
+.login__title {
     font-size: 55px;
     font-weight: 900;
-    color:#d1b174;
+    color: #d1b174;
 }
 
 .login__description {
@@ -35,12 +35,12 @@
     color: #d1b174;
 }
 
-#panel-left .logo-container svg {
+#login__panel-left .logo-container svg {
     width: 220px;
 }
 
 @media only screen and (max-width: 767px) {
-    #panel-left {
+    #login__panel-left {
         display: none !important;
     }
 }
@@ -65,7 +65,7 @@
     border: 20px;
 }
 
-form {
+.login__form {
     width: 360px;
 }
 
@@ -73,7 +73,7 @@ form {
     width: 100px;
 }
 
-form h2 {
+.login__form h2 {
     font-size: 2.9rem;
     text-transform: uppercase;
     margin: 15px 0;
@@ -141,7 +141,7 @@ form h2 {
     transition: .5s;
 }
 
-.login_forgot {
+.login__forgot {
     display: block;
     text-align: right;
     text-decoration: none;

@@ -11,17 +11,8 @@ const SignUp = () => {
             <main className="row">
                 <section className="col-md-6" id="panel-left">
                     <div className="container align-self-center">
-                        <div className="row">
-                            <h1 className="col-12 text-center title">FreshSneakers</h1>
-                        </div>
-                        <div className="row">
-                            <p className="col-12 text-center description">
-                                Welcome to the world of sneakers
-                            </p>
-                        </div>
                         <div className="row mt-5">
                             <div className="col-12 logo-container d-flex justify-content-center">
-
                             </div>
                         </div>
                     </div>
@@ -29,7 +20,7 @@ const SignUp = () => {
 
                 <section className="col-md-6 d-flex justify-content-center" id="panel-right">
                     <div className="login-container">
-                        <form autoComplete='off'>
+                        <form autoComplete='off' className="sign__form">
                             <img className="avatar" src="/img/perfil-auth.png" alt="perfil" />
                             <h2>Register</h2>
                             <div className="input-div one">
@@ -53,7 +44,7 @@ const SignUp = () => {
                                     <BsFillLockFill/>
                                 </div>
                                 <div>
-                                    <input className="input" type="password" name="password" placeholder="password" required />
+                                    <input className="input" type="password" name="password" placeholder="Password" required />
                                 </div>
                             </div>
                             <div className="input-div two">
@@ -61,10 +52,10 @@ const SignUp = () => {
                                     <BsFillHouseDoorFill/>
                                 </div>
                                 <div>
-                                    <input className="input" type="text" name="addres" placeholder="address" required />
+                                    <input className="input" type="text" name="addres" placeholder="Address" required />
                                 </div>
                             </div>
-                            <a href="/forgot" style={{textDecoration:'none'}} className="forgot">Forgot Pasword</a>
+                        
                             <input className="btn__log" type="submit" value="Login" />
                         </form>
                     </div>

@@ -1,9 +1,8 @@
 import React from "react";
 import "../Auth/Login.css";
-import { BsPersonFill } from "react-icons/bs";
 import { BsEnvelopeFill } from "react-icons/bs";
 import { BsFillLockFill } from "react-icons/bs";
-import { BsFillHouseDoorFill } from "react-icons/bs";
+
 
 const Login = () => {
   return (
@@ -11,14 +10,7 @@ const Login = () => {
       <main className="row">
         <section className="col-md-6" id="login__panel-left">
           <div className="container align-self-center">
-            <div className="row">
-              <h1 className="col-12 text-center login__title">FreshSneakers</h1>
-            </div>
-            <div className="row">
-              <p className="col-12 text-center login__description">
-                Welcome to the world of sneakers
-              </p>
-            </div>
+            
             <div className="row mt-5">
               <div className="col-12 logo-container d-flex justify-content-center"></div>
             </div>
@@ -30,8 +22,8 @@ const Login = () => {
           id="panel-right"
         >
           <div className="login__container">
-            <form autoComplete="off">
-              <img className="avatar" src="/img/perfil-auth.png" alt="perfil" />
+            <form autoComplete="off" className="login__form">
+              <img className="avatar" src="/img/logo.png" alt="perfil" />
               <h2>Login</h2>
 
               <div className="input-div two">
@@ -57,7 +49,7 @@ const Login = () => {
                     className="input"
                     type="password"
                     name="password"
-                    placeholder="password"
+                    placeholder="Password"
                     required
                   />
                 </div>
