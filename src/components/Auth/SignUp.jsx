@@ -92,7 +92,6 @@ const SignUp = () => {
             [name]: true
         }))
     }
-
     const onFocus = (e) => {
         const { name } = e.target
 
@@ -108,10 +107,11 @@ const SignUp = () => {
     }
 
     const onSubmit = (e) => {
+        const { fields } = state
         e.preventDefault()
-        
+
         if (isValid()) {
-            console.log(state.fields)
+            console.log(fields)
         }
     }
 
@@ -144,19 +144,16 @@ const SignUp = () => {
                                         onBlur={onBlur}
                                         onFocus={onFocus}
                                         required />
+                                    <div className="invalid-feedback">{errors.name}</div>
                                 </div>
-                                {errors.name && (
-                                    <div className="invalid-feedback">
-                                        {errors.name}
-                                    </div>
-                                )}
                             </div>
                             <div className="signup__input__div two">
                                 <div className="i">
                                     <BsEnvelopeFill />
                                 </div>
                                 <div>
-                                    <input className={`signup__input ${errors.email && touched.email ? 'is-invalid' : ''}`}
+                                    <input
+                                        className={`signup__input ${errors.email && touched.email ? 'is-invalid' : ''}`}
                                         type="email"
                                         name="email"
                                         placeholder="Email"
@@ -165,19 +162,16 @@ const SignUp = () => {
                                         onBlur={onBlur}
                                         onFocus={onFocus}
                                         required />
+                                    <div className="invalid-feedback">{errors.email}</div>
                                 </div>
-                                {errors.email && (
-                                    <div className="invalid-feedback">
-                                        {errors.email}
-                                    </div>
-                                )}
                             </div>
                             <div className="signup__input__div two">
                                 <div className="i">
                                     <BsFillLockFill />
                                 </div>
                                 <div>
-                                    <input className={`signup__input ${errors.password && touched.password ? 'is-invalid' : ''}`}
+                                    <input
+                                        className={`signup__input ${errors.password && touched.password ? 'is-invalid' : ''}`}
                                         type="password"
                                         name="password"
                                         placeholder="Password"
@@ -186,12 +180,8 @@ const SignUp = () => {
                                         onBlur={onBlur}
                                         onFocus={onFocus}
                                         required />
+                                    <div className="invalid-feedback">{errors.password}</div>
                                 </div>
-                                {errors.password && (
-                                    <div className="invalid-feedback">
-                                        {errors.password}
-                                    </div>
-                                )}
                             </div>
                             <div className="signup__input__div two">
                                 <div className="i">
@@ -207,14 +197,9 @@ const SignUp = () => {
                                         onBlur={onBlur}
                                         onFocus={onFocus}
                                         required />
+                                    <div className="invalid-feedback">{errors.address}</div>
                                 </div>
-                                {errors.address && (
-                                    <div className="invalid-feedback">
-                                        {errors.address}
-                                    </div>
-                                )}
                             </div>
-
                             <input className="signup__btn" type="submit" value="Sign up"/>
                         </form>
                     </div>

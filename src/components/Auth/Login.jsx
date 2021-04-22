@@ -14,10 +14,9 @@ const validators = {
 
         if(!value){
             message = 'Email is required'
-        } else if (!EMAIL_PATTERN.test(value)){//Metodo test para pasar el valor, nos devuelve true or false
+        } else if (!EMAIL_PATTERN.test(value)){
             message = 'Email is invalid'
         }
-
         return message;
     },
     password:(value)=> {
@@ -25,17 +24,15 @@ const validators = {
 
         if(!value){
             message = 'Password is required'
-        }else if(value && !PASSWORD_PATTERN.test(value)){
+        }else if(!PASSWORD_PATTERN.test(value)){
             message = 'Password must have 8 characters or more'
         }
-
         return message
     }
 }
 
 const Login = () => {
-    // Nos declaramos dos estados. Uno para valoresy errores y otro para los campos que han sido tocados
-    const [state,setState] = useState({
+     const [state,setState] = useState({
         fields:{
             email:'',
             password:''
@@ -47,7 +44,7 @@ const Login = () => {
     })
 
     const [touched,setTouched] = useState({})
-    //isInvalid nos recorre el objeto errors y comprueba si hay alguno
+
     const isvalid = ()=> {
         const {errors}= state
         return !Object.keys(errors).some(error =>errors[error])
@@ -58,27 +55,22 @@ const Login = () => {
         e.preventDefault()
 
         if(isvalid()){
-            console.log(state.fields)
+            console.log(fields)
         }
-
     }
 
     const onChange = (e)=> {
         const {name,value} = e.target
-        //Hacemos cambio de estado y nos quedamos con el valor anterior (prevState) y retornar un objeto
         setState((prevState) =>({
             fields: {
-                ...prevState.fields,//Hacemos copia de lo que teniamos y modificamos el campo que queremos
+                ...prevState.fields,
                 [name]: value
             },
             errors: {
                 ...prevState.errors,
-                [name]:validators[name] && validators[name](value)//Nos aseguramos que existe validador para name y si lo hay lo llamamos con una función y le pasamos el value
-
+                [name]:validators[name] && validators[name](value)
             }
-
         }))
-       
     }
 
     const onBlur = (e)=>{
@@ -98,38 +90,26 @@ const Login = () => {
         }))
     }
 
-
 const {email,password} = state.fields
 const {errors}= state
 
   return (
     <div className="container-fluid">
-      <main className="row">
-        <section className="col-md-6" id="login__panel-left">
-          <div className="container align-self-center">
-            
-            <div className="row mt-5">
-              <div className="col-12 logo-container d-flex justify-content-center"></div>
-            </div>
-          </div>
-        </section>
+      <main className="row login__main">
+        <section className="col-md-6" id="login__panel__left"/>
 
-        <section
-          className="col-md-6 d-flex justify-content-center"
-          id="panel-right"
-        >
+        <section className="col-md-6 d-flex justify-content-center" id="panel-right">
           <div className="login__container">
             <form autoComplete="off" onSubmit={onSubmit} className="login__form">
               <img className="avatar" src="/img/logo.png" alt="perfil" />
               <h2>Login</h2>
-
-              <div className="input-div two">
+              <div className="login__input__div two">
                 <div className="i">
                   <BsEnvelopeFill />
                 </div>
                 <div>
                   <input
-                    className={`input ${errors.email && touched.email ? 'is-invalid' : ''}`}
+                    className={`login__input ${errors.email && touched.email ? 'is-invalid' : ''}`}
                     type="email"
                     name="email"
                     value={email}
@@ -137,18 +117,19 @@ const {errors}= state
                     onBlur = {onBlur}
                     onFocus = {onFocus}
                     placeholder="Email"
-                    required
-                  />
+                    required/>
+
                 <div className="invalid-feedback">{errors.email}</div>
                 </div>
+
               </div>
-              <div className="input-div two">
+              <div className="login__input__div two">
                 <div className="i">
                   <BsFillLockFill />
                 </div>
                 <div>
                   <input
-                    className={`input ${errors.password && touched.password ? 'is-invalid' : ''}`}
+                    className={`login__input ${errors.password && touched.password ? 'is-invalid' : ''}`}
                     type="password"
                     name="password"
                     value={password}
@@ -156,8 +137,7 @@ const {errors}= state
                     onBlur = {onBlur}
                     onFocus = {onFocus}
                     placeholder="Password"
-                    required
-                  />
+                    required/>
                     <div className="invalid-feedback">{errors.password}</div>
                 </div>
               </div>
@@ -165,11 +145,10 @@ const {errors}= state
               <a
                 href="/forgot"
                 style={{ textDecoration: "none" }}
-                className="login__forgot"
-              >
+                className="login__forgot">
                 Forgot Pasword
               </a>
-              <input className="btn__log" type="submit" value="Login"  />
+              <input className="login__btn" type="submit" value="Login"  />
             </form>
           </div>
         </section>
