@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import "../Auth/Login.css";
 import { BsEnvelopeFill } from "react-icons/bs";
 import { BsFillLockFill } from "react-icons/bs";
+import { login } from "../services/AuthService";
+import { setAccessToken } from "../stores/AccessTokenStore";
+import { useHistory } from "react-router";
 
 const EMAIL_PATTERN = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 const PASSWORD_PATTERN = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
@@ -31,7 +34,8 @@ const validators = {
     }
 }
 
-const Login = () => {
+const Login = ({doLogin}) => {
+    const {push} = useHistory()
      const [state,setState] = useState({
         fields:{
             email:'',
@@ -51,11 +55,15 @@ const Login = () => {
     }
 
     const onSubmit = (e)=> {
-        const {fields} = state
         e.preventDefault()
 
         if(isvalid()){
-            console.log(fields)
+          login(state.fields)
+          .then((response)=>{
+            setAccessToken(response.access_token)
+            doLogin()
+            .then(()=>push('/'))
+          })
         }
     }
 
