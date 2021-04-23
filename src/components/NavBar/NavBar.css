@@ -1,0 +1,15 @@
+.header__nav {
+    font-size: 10px;
+    color: #333;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.text__link{
+    text-decoration: none;
+}
+
+link:hover {
+    text-decoration: none;
+}

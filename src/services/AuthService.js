@@ -1,4 +1,4 @@
-import {create} from './BaseService'
+import {create} from '../services/BaseService'
 
 const http = create({
     useAccessToken: false
