@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import "../Auth/Login.css";
 import { BsEnvelopeFill } from "react-icons/bs";
 import { BsFillLockFill } from "react-icons/bs";
-import { login } from "../services/AuthService";
-import { setAccessToken } from "../stores/AccessTokenStore";
+import { login } from "../../services/AuthService";
+
 import { useHistory } from "react-router";
+import { setAccessToken } from "../../stores/AccessTokenStore";
 
 const EMAIL_PATTERN = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 const PASSWORD_PATTERN = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
@@ -12,99 +13,99 @@ const PASSWORD_PATTERN = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
 //VALIDATORS-----------------
 
 const validators = {
-    email:(value)=> {
-        let message;
+  email: (value) => {
+    let message;
 
-        if(!value){
-            message = 'Email is required'
-        } else if (!EMAIL_PATTERN.test(value)){
-            message = 'Email is invalid'
-        }
-        return message;
-    },
-    password:(value)=> {
-        let message;
-
-        if(!value){
-            message = 'Password is required'
-        }else if(!PASSWORD_PATTERN.test(value)){
-            message = 'Password must have 8 characters or more'
-        }
-        return message
+    if (!value) {
+      message = 'Email is required'
+    } else if (!EMAIL_PATTERN.test(value)) {
+      message = 'Email is invalid'
     }
+    return message;
+  },
+  password: (value) => {
+    let message;
+
+    if (!value) {
+      message = 'Password is required'
+    } else if (!PASSWORD_PATTERN.test(value)) {
+      message = 'Password must have 8 characters or more'
+    }
+    return message
+  }
 }
 
-const Login = ({doLogin}) => {
-    const {push} = useHistory()
-     const [state,setState] = useState({
-        fields:{
-            email:'',
-            password:''
-        },
-        errors:{
-            email:validators.email(),
-            password:validators.password()
-        }
-    })
-
-    const [touched,setTouched] = useState({})
-
-    const isvalid = ()=> {
-        const {errors}= state
-        return !Object.keys(errors).some(error =>errors[error])
+const Login = ({ doLogin }) => {
+  const { push } = useHistory()
+  const [state, setState] = useState({
+    fields: {
+      email: '',
+      password: ''
+    },
+    errors: {
+      email: validators.email(),
+      password: validators.password()
     }
+  })
 
-    const onSubmit = (e)=> {
-        e.preventDefault()
+  const [touched, setTouched] = useState({})
 
-        if(isvalid()){
-          login(state.fields)
-          .then((response)=>{
-            setAccessToken(response.access_token)
-            doLogin()
-            .then(()=>push('/'))
-          })
-        }
+  const isvalid = () => {
+    const { errors } = state
+    return !Object.keys(errors).some(error => errors[error])
+  }
+
+  const onSubmit = (e) => {
+    e.preventDefault()
+
+    if (isvalid()) {
+      login(state.fields)
+        .then((response) => {
+          setAccessToken(response.access_token)
+          doLogin()
+            .then(() => push('/'))
+        })
     }
+  }
 
-    const onChange = (e)=> {
-        const {name,value} = e.target
-        setState((prevState) =>({
-            fields: {
-                ...prevState.fields,
-                [name]: value
-            },
-            errors: {
-                ...prevState.errors,
-                [name]:validators[name] && validators[name](value)
-            }
-        }))
-    }
+  const onChange = (e) => {
+    const { name, value } = e.target
+    setState((prevState) => ({
+      fields: {
+        ...prevState.fields,
+        [name]: value
+      },
+      errors: {
+        ...prevState.errors,
+        [name]: validators[name] && validators[name](value)
+      }
+    }))
+  }
 
-    const onBlur = (e)=>{
-        const {name} = e.target
+  const onBlur = (e) => {
+    const { name } = e.target
 
-        setTouched((prevTouched) => ({
-            ...prevTouched,
-            [name]:true
-        }))
-    }
-    const onFocus = (e)=>{
-        const {name} = e.target
+    setTouched((prevTouched) => ({
+      ...prevTouched,
+      [name]: true
+    }))
+  }
+  const onFocus = (e) => {
+    const { name } = e.target
 
-        setTouched((prevTouched) => ({
-            ...prevTouched,
-            [name]:false
-        }))
-    }
+    setTouched((prevTouched) => ({
+      ...prevTouched,
+      [name]: false
+    }))
+  }
 
-const {email,password} = state.fields
-const {errors}= state
+  const { email, password } = state.fields
+  const { errors } = state
 
   return (
     <div className="container-fluid">
       <main className="row login__main">
-        <section className="col-md-6" id="login__panel__left"/>
+        <section className="col-md-6" id="login__panel__left" />
 
         <section className="col-md-6 d-flex justify-content-center" id="panel-right">
           <div className="login__container">
@@ -122,12 +123,12 @@ const {errors}= state
                     name="email"
                     value={email}
                     onChange={onChange}
-                    onBlur = {onBlur}
-                    onFocus = {onFocus}
+                    onBlur={onBlur}
+                    onFocus={onFocus}
                     placeholder="Email"
-                    required/>
+                    required />
 
-                <div className="invalid-feedback">{errors.email}</div>
+                  <div className="invalid-feedback">{errors.email}</div>
                 </div>
 
               </div>
@@ -142,11 +143,11 @@ const {errors}= state
                     name="password"
                     value={password}
                     onChange={onChange}
-                    onBlur = {onBlur}
-                    onFocus = {onFocus}
+                    onBlur={onBlur}
+                    onFocus={onFocus}
                     placeholder="Password"
-                    required/>
-                    <div className="invalid-feedback">{errors.password}</div>
+                    required />
+                  <div className="invalid-feedback">{errors.password}</div>
                 </div>
               </div>
 
@@ -156,7 +157,7 @@ const {errors}= state
                 className="login__forgot">
                 Forgot Pasword
               </a>
-              <input className="login__btn" type="submit" value="Login"  />
+              <input className="login__btn" type="submit" value="Login" />
             </form>
           </div>
         </section>
