@@ -16,15 +16,15 @@ function App() {
     return getUserInfo().then((response) => setUser(response));
   };
 
-  useEffect(()=>{
-    if(getAccessToken){
+  useEffect(() => {
+    if (getAccessToken()) {
       getUser()
     }
-  },[])
+  }, [])
 
   return (
     <div className="App">
-      <NavBar user= {user}/>
+      <NavBar user={user} />
       {/*<AppRouter />*/}
       <Switch>
         <Route exact path="/" component={Home} />
