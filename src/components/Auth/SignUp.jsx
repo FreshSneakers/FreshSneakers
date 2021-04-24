@@ -4,9 +4,13 @@ import { BsPersonFill } from "react-icons/bs";
 import { BsEnvelopeFill } from "react-icons/bs";
 import { BsFillLockFill } from "react-icons/bs";
 import { BsFillHouseDoorFill } from "react-icons/bs";
+import { signup } from '../../services/AuthService';
+import { useHistory } from 'react-router';
 
 //eslint-disable-next-line
 const EMAIL_PATTERN = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+//eslint-disable-next-line
 const PASSWORD_PATTERN = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
 
 const validators = {
@@ -48,10 +52,10 @@ const validators = {
         }
         return message
     }
-
 }
 
 const SignUp = () => {
+    const { push } = useHistory()
 
     const [state, setState] = useState({
         fields: {
@@ -111,7 +115,11 @@ const SignUp = () => {
         e.preventDefault()
 
         if (isValid()) {
-            console.log(fields)
+            signup(fields)
+                .then((response) => {
+                    console.log(response)
+                    push('/login')
+                })
         }
     }
 
@@ -200,7 +208,7 @@ const SignUp = () => {
                                     <div className="invalid-feedback">{errors.address}</div>
                                 </div>
                             </div>
-                            <input className="signup__btn" type="submit" value="Sign up"/>
+                            <input className="signup__btn" type="submit" value="Sign up" />
                         </form>
                     </div>
                 </section>
