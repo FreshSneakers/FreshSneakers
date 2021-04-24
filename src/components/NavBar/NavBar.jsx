@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
-import {logout} from '../../stores/AccessTokenStore'
+import { logout } from '../../stores/AccessTokenStore'
+
 
 const NavBar = ({ user }) => {
   return (
@@ -45,24 +46,21 @@ const NavBar = ({ user }) => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link
-                className="nav-link"
-                style={{ color: "#FFF" }}
-                to="/auction"
-              >
+              <Link className="nav-link" style={{ color: "#FFF" }} to="/auction">
                 Auction
               </Link>
             </li>
             <li className="nav-item">
-              <Link
-                className="nav-link"
-                style={{ color: "#FFF" }}
-                to="/contact-us"
-              >
+              <Link className="nav-link" style={{ color: "#FFF" }} to="/contact-us">
                 Contact us{" "}
               </Link>
             </li>
           </ul>
+          <img
+            src="./img/shopping-cart.png"
+            alt="cart"
+            style={{ height: "25px" }}
+          />
           {!user ? (
             <>
               <Link className="nav-link" style={{ color: "#FFF" }} to="/login">
@@ -74,17 +72,11 @@ const NavBar = ({ user }) => {
             </>
           ) : (
             <>
-              <Link className="nav-link" style={{ color: "#FFF" }}onClick={logout}>
+              <a className="nav-link" style={{ color: "#FFF" }} onClick={logout}>
                 Logout
-              </Link>
+              </a>
             </>
           )}
-
-          <img
-            src="./img/shopping-cart.png"
-            alt="cart"
-            style={{ height: "25px" }}
-          />
         </div>
       </div>
     </nav>
