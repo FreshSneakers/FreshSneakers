@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import { logout } from '../../stores/AccessTokenStore'
+import cartImg from '../../assets/shopping-cart.png';
 
 
 const NavBar = ({ user }) => {
@@ -17,18 +18,17 @@ const NavBar = ({ user }) => {
           data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+          aria-label="Toggle navigation">
           <span
             className="navbar-toggler-icon"
-            style={{ color: "#FFF" }}
-          ></span>
+            style={{ color: "#FFF" }}>
+
+          </span>
         </button>
 
         <div
           className="collapse navbar-collapse ml-5"
-          id="navbarSupportedContent"
-        >
+          id="navbarSupportedContent">
           <ul className="navbar-nav m-auto">
             <li className="nav-item">
               <Link className="nav-link" style={{ color: "#FFF" }} to="/">
@@ -57,24 +57,24 @@ const NavBar = ({ user }) => {
             </li>
           </ul>
           <img
-            src="./img/shopping-cart.png"
+            src={cartImg}
             alt="cart"
             style={{ height: "25px" }}
           />
           {!user ? (
             <>
-              <Link className="nav-link" style={{ color: "#FFF" }} to="/login">
-                Login
-              </Link>
               <Link className="nav-link" style={{ color: "#FFF" }} to="/signup">
                 Sign Up
+              </Link>
+              <Link className="nav-link" style={{ color: "#FFF" }} to="/login">
+                Login
               </Link>
             </>
           ) : (
             <>
-              <a className="nav-link" style={{ color: "#FFF" }} onClick={logout}>
-                Logout
-              </a>
+              <button className="nav-link" style={{ color: "#FFF", backgroundColor: '#343A3F', border: 'none' }} onClick={logout}>
+                Log Out
+              </button>
             </>
           )}
         </div>

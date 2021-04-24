@@ -24,8 +24,11 @@ export const create = (opts = {}) => {
       if (error.response && [401, 403].includes(error.response.status)) {
         logout()
       }
+      if (error.response && [404].includes(error.response.status)) {
+        return error.response
+      }
 
-      return Promise.reject(error)
+      return Promise.reject(`error`)
     }
   )
 
