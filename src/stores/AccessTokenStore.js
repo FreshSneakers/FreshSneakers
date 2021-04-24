@@ -10,5 +10,5 @@ export const setAccessToken = (token)=>{
 
 export const logout = () => {
     window.localStorage.removeItem('token')
-    window.location.assign('/signin')
+    window.location.assign('/login')
   }
