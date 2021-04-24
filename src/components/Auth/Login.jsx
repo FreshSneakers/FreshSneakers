@@ -7,7 +7,9 @@ import { login } from "../../services/AuthService";
 import { useHistory } from "react-router";
 import { setAccessToken } from "../../stores/AccessTokenStore";
 
+// eslint-disable-next-line
 const EMAIL_PATTERN = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+// eslint-disable-next-line
 const PASSWORD_PATTERN = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
 
 //VALIDATORS-----------------
@@ -56,14 +58,21 @@ const Login = ({ doLogin }) => {
   }
 
   const onSubmit = (e) => {
+    const { fields } = state
     e.preventDefault()
-
     if (isvalid()) {
-      login(state.fields)
+      login(fields)
         .then((response) => {
-          setAccessToken(response.access_token)
-          doLogin()
-            .then(() => push('/'))
+          if (response.access_token){
+            setAccessToken(response.access_token)
+            doLogin()
+              .then(() => {
+                push('/')
+              })
+              .catch((error) => console.log(error.message))
+          }else{
+            console.log(response.data.errors)
+          }
         })
     }
   }

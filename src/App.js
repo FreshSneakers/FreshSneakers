@@ -8,28 +8,31 @@ import Home from "./components/Home/Home";
 import Login from "./components/Auth/Login";
 import SignUp from "./components/Auth/SignUp";
 import { getAccessToken } from "./stores/AccessTokenStore";
+import ActivateAccount from "./components/TokenAccount/ActivateAccount";
 
 function App() {
   const [user, setUser] = useState(null);
 
   const getUser = () => {
-    return getUserInfo().then((response) => setUser(response));
+    return getUserInfo()
+      .then((response) => setUser(response));
   };
 
-  useEffect(()=>{
-    if(getAccessToken){
+  useEffect(() => {
+    if (getAccessToken()) {
       getUser()
     }
-  },[])
+  }, [])
 
   return (
     <div className="App">
-      <NavBar user= {user}/>
+      <NavBar user={user} />
       {/*<AppRouter />*/}
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/login" render={() => <Login doLogin={getUser} />} />
         <Route exact path="/signup" component={SignUp} />
+        <Route exact path="/activate/:token" component={ActivateAccount}/>
       </Switch>
     </div>
   );
