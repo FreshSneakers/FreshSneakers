@@ -51,6 +51,7 @@ const Login = ({ doLogin }) => {
   })
 
   const [touched, setTouched] = useState({})
+  const [errorsForm,setErrorsForm] =useState({})
 
   const isvalid = () => {
     const { errors } = state
@@ -70,13 +71,13 @@ const Login = ({ doLogin }) => {
                 push('/')
               })
               .catch((error) => console.log(error.message))
+              
           }else{
-            console.log(response.data.errors)
+            setErrorsForm(response.data.errors)
           }
         })
     }
   }
-
   const onChange = (e) => {
     const { name, value } = e.target
     setState((prevState) => ({
@@ -137,7 +138,7 @@ const Login = ({ doLogin }) => {
                     placeholder="Email"
                     required />
 
-                  <div className="invalid-feedback">{errors.email}</div>
+                   <div className="invalid-feedback ">{errors.email}</div>
                 </div>
 
               </div>
@@ -159,7 +160,7 @@ const Login = ({ doLogin }) => {
                   <div className="invalid-feedback">{errors.password}</div>
                 </div>
               </div>
-
+              {errorsForm && <div style={{color:'red'}}><spam> {errorsForm.email}</spam></div>}
               <a
                 href="/forgot"
                 style={{ textDecoration: "none" }}
