@@ -1,0 +1,12 @@
+.image__activate{
+    background-image: url('https://images.unsplash.com/photo-1577655197898-da78ff8bed68?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTE2fHxzbmVha2Vyc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');
+    height:100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.title{
+    text-align: center;
+    color: rgb(207, 121, 121);
+    padding-top: 100px;
+}
