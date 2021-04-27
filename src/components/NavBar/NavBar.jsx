@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { logout } from '../../stores/AccessTokenStore'
 import cartImg from '../../assets/shopping-cart.png';
