@@ -3,7 +3,6 @@ import "../Auth/Login.css";
 import { BsEnvelopeFill } from "react-icons/bs";
 import { BsFillLockFill } from "react-icons/bs";
 import { login } from "../../services/AuthService";
-
 import { useHistory } from "react-router";
 import { setAccessToken } from "../../stores/AccessTokenStore";
 
@@ -11,8 +10,6 @@ import { setAccessToken } from "../../stores/AccessTokenStore";
 const EMAIL_PATTERN = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 // eslint-disable-next-line
 const PASSWORD_PATTERN = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
-
-//VALIDATORS-----------------
 
 const validators = {
   email: (value) => {
@@ -31,7 +28,7 @@ const validators = {
     if (!value) {
       message = 'Password is required'
     } else if (!PASSWORD_PATTERN.test(value)) {
-      message = 'Password must have 8 characters or more'
+      message = 'Your password does not meet the requirements'
     }
     return message
   }
@@ -51,7 +48,7 @@ const Login = ({ doLogin }) => {
   })
 
   const [touched, setTouched] = useState({})
-  const [errorsForm,setErrorsForm] =useState({})
+  const [errorsForm, setErrorsForm] = useState({})
 
   const isvalid = () => {
     const { errors } = state
@@ -64,15 +61,15 @@ const Login = ({ doLogin }) => {
     if (isvalid()) {
       login(fields)
         .then((response) => {
-          if (response.access_token){
+          if (response.access_token) {
             setAccessToken(response.access_token)
             doLogin()
               .then(() => {
                 push('/')
               })
               .catch((error) => console.log(error.message))
-              
-          }else{
+
+          } else {
             setErrorsForm(response.data.errors)
           }
         })
@@ -138,7 +135,7 @@ const Login = ({ doLogin }) => {
                     placeholder="Email"
                     required />
 
-                   <div className="invalid-feedback ">{errors.email}</div>
+                  <div className="invalid-feedback ">{errors.email}</div>
                 </div>
 
               </div>
@@ -160,7 +157,12 @@ const Login = ({ doLogin }) => {
                   <div className="invalid-feedback">{errors.password}</div>
                 </div>
               </div>
-              {errorsForm && <div style={{color:'red'}}><spam> {errorsForm.email}</spam></div>}
+              {
+                errorsForm
+                && 
+                <div style={{ color: '#dc3545' }}>
+                  <p> {errorsForm.email}</p>
+                </div>}
               <a
                 href="/forgot"
                 style={{ textDecoration: "none" }}
