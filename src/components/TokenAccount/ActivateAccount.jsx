@@ -12,16 +12,25 @@ const ActivateAccount = () => {
   useEffect(() => {
     activate(token)
   }, [token]);
+  
 
   return (
+    
+    <div className=" container__1">
     <div className="image__activate">
+    
       <div className="title">
         <h1>Your account has been activated!</h1>
-        <Link className="acount__link" style={{ color: "#FFF" }} to="/login">
+        <Link className="acount__link" style={{ color: "#d42a00" }} to="/login">
           Go to login
         </Link>
+        <img className="zapa" src="/img/zapas2.png" alt="perfil" />
       </div>
     </div>
+
+    </div>
+    
+    
   );
 };
 
