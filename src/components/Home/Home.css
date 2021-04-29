@@ -94,7 +94,7 @@
 
 @media only screen and (max-width: 1180px) {
     .H__product__info h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
     .H__product__info p {
         font-size: 1.3rem;
@@ -121,9 +121,24 @@
     }
 }
 
+@media only screen and (max-width: 700px) {
+    .H__product__info h1 {
+        font-size: 1.9rem;
+    }
+    .H__product__info p {
+        font-size: 1.1rem;
+    }
+    .H__product__info h2 {
+        font-size: 1.7rem;
+    }
+    .H__btn {
+        font-size: 13px;
+    }
+}
+
 @media only screen and (max-width: 635px) {
     .H__product__info h1 {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
     }
     .H__product__info p {
         font-size: 1rem;
@@ -144,13 +159,13 @@
     }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 540px) {
     .Home {
         display: flex;
         flex-direction: column;
-        flex-wrap: nowrap;
         justify-content: center;
         align-items: center;
+        height: 100vh;
     }
     .H__product__info {
         align-content: unset;
@@ -160,10 +175,12 @@
         margin-top: 10rem;
     }
     .tone-1 {
-        background-color: white;
+        width: 100%;
+        background: linear-gradient(0deg, rgba(63, 58, 84, 1) 16%, rgba(73, 60, 86, 1) 28%, rgba(109, 60, 86, 1) 78%);
     }
     .tone-2 {
-        all: unset;
+        width: 100%;
+        background: linear-gradient(0deg, rgba(38, 59, 82, 1) 31%, rgba(63, 58, 84, 1) 100%);
     }
     .carousel-control-prev {
         background-color: #a7a79f;

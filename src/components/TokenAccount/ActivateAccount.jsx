@@ -20,7 +20,7 @@ const ActivateAccount = () => {
     <div className="image__activate">
     
       <div className="title">
-        <h1>Your account has been activated!</h1>
+        <h1 className="title__account">Your account has been activated!</h1>
         <Link className="acount__link" style={{ color: "#d42a00" }} to="/login">
           Go to login
         </Link>

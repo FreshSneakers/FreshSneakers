@@ -1,27 +1,42 @@
-
-.searchBox {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform:  translate(-50%,50%);
-  background: #2f3640;
-  height: 40px;
-  border-radius: 40px;
-  padding: 10px;
-
+.sell__title {
+  text-align: center;
+  padding: 40px;
 }
 
-.searchBox:hover > .searchInput {
-  width: 240px;
+.sell__title h1 {
+  margin-bottom: 20px;
+}
+
+.div__ {
+  padding: 60px;
+}
+
+.sell__search__box {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  background: #2f3640;
+  height: 60px;
+  border-radius: 40px;
+  padding: 10px;
+}
+
+.sell__search__box:hover>.sell__search__input {
+  width: 360px;
   padding: 0 6px;
 }
 
-.searchBox:hover > .searchButton {
-background: white;
-color : #2f3640;
+::placeholder {
+  color: white;
 }
 
-.searchButton {
+.sell__search__box:hover>.sell__search__button {
+  background: white;
+  color: #2f3640;
+}
+
+.sell__search__button {
   color: white;
   float: right;
   width: 40px;
@@ -34,23 +49,47 @@ color : #2f3640;
   transition: 0.4s;
 }
 
-.searchInput {
-  border:none;
+.sell__search__input {
+  border: none;
   background: none;
-  outline:none;
-  float:left;
+  outline: none;
+  float: left;
   padding: 0;
   color: white;
   font-size: 16px;
   transition: 0.4s;
   line-height: 40px;
   width: 0px;
-
 }
 
 @media screen and (max-width: 620px) {
-.searchBox:hover > .searchInput {
-  width: 150px;
-  padding: 0 6px;
+  .sell__search__box:hover>.sell__search__input {
+    width: 150px;
+    padding: 0 6px;
+  }
 }
+
+.sell__result {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: start;
+  align-items: center;
+  border-bottom: solid 1px #CFCFCF;
+  padding: 25px;
+}
+
+.sell__result__left {
+  margin-right: 25px;
+}
+
+.sell__result__left img {
+  height: 40px;
+}
+
+.sell__result__right {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
 }
