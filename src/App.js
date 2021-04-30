@@ -11,6 +11,8 @@ import Buy from "./components/Buy/Buy"
 import { getAccessToken } from "./stores/AccessTokenStore";
 import ActivateAccount from "./components/TokenAccount/ActivateAccount";
 import Sell from "./components/Sell/Sell";
+import SellDetail from "./components/Sell/SellDetail"
+
 
 
 function App() {
@@ -37,7 +39,9 @@ function App() {
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/buy" component={Buy}/>
         <Route exact path="/sell" component={Sell}/>
+        <Route exact path="/sneaker/:id" component={SellDetail}/>
         <Route exact path="/activate/:token" component={ActivateAccount}/>
+
       </Switch>
     </div>
   );

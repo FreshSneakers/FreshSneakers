@@ -1,0 +1,139 @@
+.SellDetail {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.SD__container1 {
+    height: 100vh;
+    width: 120vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.SD__container1 h1 {
+    font-size: 30px;
+    padding: 20px;
+}
+
+.SD__container1 h4 {
+    font-size: 20px;
+    padding: 20px;
+}
+
+.SD__container1 img {
+    height: 400px;
+}
+
+.SD__container2 {
+    height: 100vh;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(243, 243, 243);
+}
+
+.SD__container2 h1 {
+    font-size: 35px;
+    padding: 20px;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: #525d64;
+    background-image: none;
+}
+
+/* Remove IE arrow */
+
+select::-ms-expand {
+    display: none;
+}
+
+/* Custom Select */
+
+.select {
+    position: relative;
+    display: flex;
+    width: 11em;
+    height: 3em;
+    line-height: 3;
+    background: #40464b;
+    overflow: hidden;
+    border-radius: .25em;
+}
+
+select {
+    flex: 1;
+    padding: 0 .5em;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Arrow */
+
+.select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: #40464b;
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+}
+
+/* Transition */
+
+.select:hover::after {
+    color: #f39c12;
+}
+
+.sell__btn {
+    display: block;
+    padding: 10px;
+    width: 300px;
+    border-radius: 25px;
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    outline: none;
+    border: none;
+    background-image: linear-gradient(to right, #2ebe29, #2ebe29, #2ebe29);
+    cursor: pointer;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    transition: .5s;
+}
+
+.sell__btn:hover {
+    background: #21d11b;
+    color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 5px #21d11b, 0 0 25px #21d11b, 0 0 50px #21d11b, 0 0 100px #21d11b;
+}
+
+.SD__total{
+    padding: 30px;
+}

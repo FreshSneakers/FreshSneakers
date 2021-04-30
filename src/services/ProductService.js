@@ -9,3 +9,7 @@ export const getProducts = () => {
 export const filterProduct = (data) => {
     return http.get('/sell', {params: {model: data}})
 }
+
+export const sellDetail = (id) => {
+    return http.get(`/sneaker/${id}`)
+}
