@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import './Sell.css'
 import { filterProduct } from "../../services/ProductService"
+import { Link } from "react-router-dom";
 
 const Sell = () => {
 
@@ -35,23 +36,27 @@ const Sell = () => {
             autoComplete="off" />
 
           <button className="sell__search__button" disabled >
-            <BsSearch />
+            <i class="material-icons">
+              <BsSearch />
+            </i>
           </button>
         </div>
       </div>
-      <div className="container" style={{ maxWidth: '600px' }}>
+      <div className="container overResult" style={{ maxWidth: '600px' }}>
         {
           result.length > 0 &&
           result.map(sneaker => (
-            <div className="sell__result" key={sneaker.id}>
-              <div className="sell__result__left">
-                <img src={sneaker.image} />
+            <Link to={`/sneaker/${sneaker._id}`} style={{ textDecoration: 'none', color: 'black' }} key={sneaker._id}>
+              <div className="sell__result">
+                <div className="sell__result__left">
+                  <img src={sneaker.image} alt={sneaker.model} />
+                </div>
+                <div className="sell__result__right">
+                  <span style={{ fontWeight: 'bold' }}>{sneaker.model}</span>
+                  <span style={{ color: '#918e8e', fontWeight: 'bold' }}>{sneaker.color}</span>
+                </div>
               </div>
-              <div className="sell__result__right">
-                <span style={{fontWeight:'bold'}}>{sneaker.model}</span>
-                <span style={{ color: '#918e8e', fontWeight:'bold'}}>{sneaker.color}</span>
-              </div>
-            </div>
+            </Link>
           ))
         }
       </div>
