@@ -1,7 +1,11 @@
-import { create } from '../services/BaseService'
+import { create } from "../services/BaseService";
 
-const http = create()
+const http = create();
 
 export const getUserInfo = () => {
-    return http.get('/user/me')
-}
+  return http.get("/user/me");
+};
+
+export const editProfile = (body) => {
+  return http.post('/profile',body);
+};
