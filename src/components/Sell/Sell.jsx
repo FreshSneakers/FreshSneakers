@@ -36,7 +36,7 @@ const Sell = () => {
             autoComplete="off" />
 
           <button className="sell__search__button" disabled >
-            <i class="material-icons">
+            <i className="material-icons">
               <BsSearch />
             </i>
           </button>
