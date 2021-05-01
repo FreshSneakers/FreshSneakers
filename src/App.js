@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {useEffect, useState } from "react";
 import "./App.css";
 //import AppRouter from './components/AppRouter/AppRouter';
 import NavBar from "./components/NavBar/NavBar";
@@ -12,6 +12,7 @@ import { getAccessToken } from "./stores/AccessTokenStore";
 import ActivateAccount from "./components/TokenAccount/ActivateAccount";
 import Sell from "./components/Sell/Sell";
 import SellDetail from "./components/Sell/SellDetail"
+import Profile from "./components/Profile/Profile"
 
 
 
@@ -39,6 +40,7 @@ function App() {
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/buy" component={Buy}/>
         <Route exact path="/sell" component={Sell}/>
+        <Route exact path="/profile" component={Profile}/>
         <Route exact path="/sneaker/:id" component={SellDetail}/>
         <Route exact path="/activate/:token" component={ActivateAccount}/>
 

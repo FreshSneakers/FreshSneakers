@@ -72,6 +72,9 @@ const NavBar = ({ user }) => {
             </>
           ) : (
             <>
+              <Link className="nav-link" style={{ color: "#FFF" }} to="/profile">
+                Profile
+              </Link>
               <button className="nav-link" style={{ color: "#FFF", backgroundColor: '#343A3F', border: 'none' }} onClick={logout}>
                 Log Out
               </button>
