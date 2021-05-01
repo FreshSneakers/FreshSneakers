@@ -9,7 +9,7 @@ const Home = () => {
                 <div className="H__product__info">
                     <h1>NIKE AIR MAX 270</h1>
                     <p>New and Improved</p>
-                    <h2>$ 200</h2>
+                    <h2>200 €</h2>
                     <div className="H__info__btns">
                         <Link to="/" style={{ textDecoration: 'none', color: 'white' }} className="H__btn discover-btn">DISCOVER</Link>
                         <Link to="/" style={{ textDecoration: 'none', color: 'white' }} className="H__btn cart-btn">ADD TO CART</Link>
