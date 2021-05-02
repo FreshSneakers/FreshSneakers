@@ -1,6 +1,5 @@
-import {useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
-//import AppRouter from './components/AppRouter/AppRouter';
 import NavBar from "./components/NavBar/NavBar";
 import { Route, Switch } from "react-router";
 import { getUserInfo } from "./services/UserService";
@@ -13,8 +12,7 @@ import ActivateAccount from "./components/TokenAccount/ActivateAccount";
 import Sell from "./components/Sell/Sell";
 import SellDetail from "./components/Sell/SellDetail"
 import Profile from "./components/Profile/Profile"
-
-
+import BuyDetail from "./components/Buy/BuyDetail";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -33,17 +31,16 @@ function App() {
   return (
     <div className="App">
       <NavBar user={user} />
-      {/*<AppRouter />*/}
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/login" render={() => <Login doLogin={getUser} />} />
         <Route exact path="/signup" component={SignUp} />
-        <Route exact path="/buy" component={Buy}/>
-        <Route exact path="/sell" component={Sell}/>
-        <Route exact path="/profile" component={Profile}/>
-        <Route exact path="/sneaker/:id" component={SellDetail}/>
-        <Route exact path="/activate/:token" component={ActivateAccount}/>
-
+        <Route exact path="/buy" component={Buy} />
+        <Route exact path="/sell" component={Sell} />
+        <Route exact path="/profile" component={Profile} />
+        <Route exact path="/sneaker-buy/:id" component={BuyDetail} />
+        <Route exact path="/sneaker-sell/:id" component={SellDetail} />
+        <Route exact path="/activate/:token" component={ActivateAccount} />
       </Switch>
     </div>
   );

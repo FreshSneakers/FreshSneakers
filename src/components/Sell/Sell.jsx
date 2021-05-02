@@ -46,7 +46,7 @@ const Sell = () => {
         {
           result.length > 0 &&
           result.map(sneaker => (
-            <Link to={`/sneaker/${sneaker._id}`} style={{ textDecoration: 'none', color: 'black' }} key={sneaker._id}>
+            <Link to={`/sneaker-sell/${sneaker._id}`} style={{ textDecoration: 'none', color: 'black' }} key={sneaker._id}>
               <div className="sell__result">
                 <div className="sell__result__left">
                   <img src={sneaker.image} alt={sneaker.model} />
