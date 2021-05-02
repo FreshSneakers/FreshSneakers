@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+import {Link} from 'react-router-dom'
 import { useParams } from "react-router";
 import { getUserInfo } from "../../services/UserService";
-import {editProfile} from "../../services/UserService"
+import { editProfile } from "../../services/UserService";
 import "./profile.css";
 
 const Profile = () => {
@@ -14,26 +15,32 @@ const Profile = () => {
   }, []);
 
   const onChange = (e) => {
-      const {name, value } = e.target
-    setState(prevState => {
-        return {...prevState, [name]:value}
-    })
+    const { name, value } = e.target;
+    setState((prevState) => {
+      return { ...prevState, [name]: value };
+    });
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
-    editProfile(state)
+    editProfile(state);
   };
 
   return (
     <div className="Profile">
       <div className="prBox__1">
-        <img className="img__profile" src="/img/logo.png" alt="imgProfile" />
+        <img
+          className="img__profile"
+          src="\img\air-jorda-red.png"
+          style={{width:'150px'}}
+          alt="imgProfile"
+        />
       </div>
       <div className="prBox__2">
         <div className="information">
           <h1>Information</h1>
           <form autoComplete="off" onSubmit={onSubmit} className="edit__form">
+            Name:
             <input
               className="input__name"
               name="name"
@@ -41,6 +48,7 @@ const Profile = () => {
               value={state.name}
               onChange={onChange}
             />
+            Email:
             <input
               className="input__email"
               name="email"
@@ -48,7 +56,7 @@ const Profile = () => {
               value={state.email}
               onChange={onChange}
             />
-
+            address:
             <input
               className="input__address"
               name="address"
@@ -56,9 +64,11 @@ const Profile = () => {
               value={state.address}
               onChange={onChange}
             />
-
             <div className="btn__edit">
-              <button type= "submit">Edit profile</button>
+              <button type="submit">save changes</button>
+              <button >
+                <Link  className="button__link" to="/">Back to home</Link>
+              </button>
             </div>
           </form>
         </div>
