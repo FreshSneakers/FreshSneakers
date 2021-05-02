@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getProducts } from '../../services/ProductService';
 import './Buy.css'
 import PropagateLoader from "react-spinners/PropagateLoader";
+import { Link } from 'react-router-dom';
 
 const Buy = () => {
 
@@ -21,7 +22,7 @@ const Buy = () => {
     return (
         <div className="Buy">
             <div className="B__Header">
-                <h1>NEW RELEASES</h1>
+                <h1>Freshsneakers</h1>
             </div>
             <div className="container B__main">
                 {
@@ -33,32 +34,44 @@ const Buy = () => {
                         <>
                             <div className="Buy__result">
                                 <div className="card__results">
-                                    <div>
+                                    <div className="card__result">
                                         Results: {sneakers.length}
                                     </div>
-                                    <div>
-                                        Sort By: 
+                                    <div className="card__filter">
+                                        <label style={{ marginRight: '5px' }}>Sort By:</label>
                                         <select>
-
+                                            <option defaultValue >Brand</option>
+                                            <option value="1">Nike</option>
+                                            <option value="2">Jordan</option>
+                                        </select>
+                                    </div>
+                                    <div className="card__filter">
+                                        <label style={{ marginRight: '5px' }}>Sort By:</label>
+                                        <select>
+                                            <option defaultValue >Relevance</option>
+                                            <option value="1">Price low</option>
+                                            <option value="2">Price high</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div className="row g-3 row-cols-1 row-cols-sm-2 row-cols-md-3">
                                     {sneakers.map(sneaker => (
-                                        <div className="col" key={sneaker.id}>
-                                            <div class="card" style={{ border: "none" }}>
-                                                <div className="card__img__contain">
-                                                    <img src={sneaker.image} class="card-img-top" alt={sneaker.name} />
+                                        <Link to={`/sneaker-buy/${sneaker._id}`} key={sneaker._id}>
+                                            <div className="col">
+                                                <div className="card" style={{ border: "none" }}>
+                                                    <div className="card__img__contain">
+                                                        <img src={sneaker.image} className="card-img-top" alt={sneaker.name} />
+                                                    </div>
+                                                    <div className="card-body">
+                                                        <h5 className="card__brand">{sneaker.brand}</h5>
+                                                        <h5 className="card__model">{sneaker.model}</h5>
+                                                        <div className="card__price">
+                                                            {sneaker.price} €
                                                 </div>
-                                                <div class="card-body">
-                                                    <h5 className="card__brand">{sneaker.brand}</h5>
-                                                    <h5 class="card__model">{sneaker.model}</h5>
-                                                    <div className="card__price">
-                                                        {sneaker.price} €
-                                                </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </Link>
                                     ))}
                                 </div>
                             </div>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
 import { getUserInfo } from "../../services/UserService";
 import {editProfile} from "../../services/UserService"
 import "./profile.css";
