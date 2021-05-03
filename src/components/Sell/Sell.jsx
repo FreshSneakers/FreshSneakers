@@ -9,7 +9,6 @@ const Sell = () => {
   const [search, setSearch] = useState('')
   const [result, setResult] = useState({})
 
-
   const onChange = (e) => {
     setSearch(e.target.value)
     filterProduct(search)

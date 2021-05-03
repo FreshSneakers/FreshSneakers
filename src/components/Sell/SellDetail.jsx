@@ -3,12 +3,14 @@ import { useHistory, useParams } from 'react-router';
 import { sellDetail, sellSneaker } from '../../services/ProductService';
 import './SellDetail.css'
 import PropagateLoader from "react-spinners/PropagateLoader";
+import { getUserInfo } from "../../services/UserService";
 
 const SellDetail = () => {
     const [state, setState] = useState({})
+    const [user, setUser] = useState({})
     const [loading, setLoading] = useState(true)
-    const { id } = useParams()
     const [validation, setValidation] = useState('')
+    const { id } = useParams()
     const { push } = useHistory()
 
     useEffect(() => {
@@ -21,6 +23,21 @@ const SellDetail = () => {
             })
     }, [id])
 
+    useEffect(() => {
+        getUserInfo()
+            .then((res) => {
+                setUser(res)
+            })
+    }, [])
+
+    useEffect(() => {
+        if(user){
+            setState((prevState) => {
+               return {...prevState, user: user.id}
+           })
+        }
+    }, [user])
+
     const onChange = (e) => {
         const { name, value } = e.target
         setState(prevState => {
@@ -30,15 +47,22 @@ const SellDetail = () => {
 
     const onSubmit = () => {
         if(state.size){
-            sellSneaker(state)
-                .then((response) => {
-                    console.log('front', response)
-                })
+            if(user){
+                console.log(user)
+                console.log(state)
+                sellSneaker(state)
+                    .then((res) => {
+                        //hacer una page de "tu product está en venta PLUS correo nodemailer y page en profile con tus ventas y compras"
+                        console.log(res)
+                        push('/sell')
+                    })
+            }else{
+                push('/login')
+            }
         }else{
            setValidation('Choose a size')
         }
     }
-
 
     return (
         <div className="SellBox">
@@ -69,7 +93,7 @@ const SellDetail = () => {
                             </div>
                             <div className="select">
                                 <select name="size" id="size" onChange={onChange}>
-                                    <option defaultValue disabled>Select a size</option>
+                                    <option value disabled>Select a size</option>
                                     <option value="38">38</option>
                                     <option value="39">39</option>
                                     <option value="40">40</option>
@@ -82,7 +106,7 @@ const SellDetail = () => {
                             </div>
 
                             <div className="Sell__about">
-                                <label>About this producut</label><br />
+                                <label>About this product</label><br />
                                 <p>
                                     {state.description}
                                 </p>

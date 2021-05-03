@@ -56,7 +56,7 @@ const Buy = () => {
                                 </div>
                                 <div className="row g-3 row-cols-1 row-cols-sm-2 row-cols-md-3">
                                     {sneakers.map(sneaker => (
-                                        <Link to={`/sneaker-buy/${sneaker._id}`} key={sneaker._id}>
+                                        <Link to={`/sneaker-buy/${sneaker._id}`} key={sneaker._id} style={{ textDecoration: 'none' }}>
                                             <div className="col">
                                                 <div className="card" style={{ border: "none" }}>
                                                     <div className="card__img__contain">
@@ -67,7 +67,7 @@ const Buy = () => {
                                                         <h5 className="card__model">{sneaker.model}</h5>
                                                         <div className="card__price">
                                                             {sneaker.price} €
-                                                </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>

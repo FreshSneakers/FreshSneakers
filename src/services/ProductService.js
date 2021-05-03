@@ -14,6 +14,10 @@ export const buyDetail = (id) => {
     return http.get(`/sneaker-buy/${id}`)
 }
 
+export const buySneaker = (id, size, user) => {
+    return http.post('/buy/sneaker', {params: {product:id, size:size, user:user}})
+}
+
 export const sellDetail = (id) => {
     return http.get(`/sneaker-sell/${id}`)
 }
