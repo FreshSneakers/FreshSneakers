@@ -13,6 +13,7 @@ import Sell from "./components/Sell/Sell";
 import SellDetail from "./components/Sell/SellDetail"
 import Profile from "./components/Profile/Profile"
 import BuyDetail from "./components/Buy/BuyDetail";
+import SuccessStripe from "./components/Success-pages/SuccessStripe";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -38,6 +39,7 @@ function App() {
         <Route exact path="/buy" component={Buy} />
         <Route exact path="/sell" component={Sell} />
         <Route exact path="/profile" component={Profile} />
+        <Route exact path="/successful-pay" component={SuccessStripe}/>
         <Route exact path="/sneaker-buy/:id" component={BuyDetail} />
         <Route exact path="/sneaker-sell/:id" component={SellDetail} />
         <Route exact path="/activate/:token" component={ActivateAccount} />
