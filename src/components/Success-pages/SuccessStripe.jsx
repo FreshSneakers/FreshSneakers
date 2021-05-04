@@ -1,12 +1,23 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./SuccessStripe.css";
 
 const SuccessStripe = () => {
-    return (
-        <div className="SuccessStripe">
-            <h1>Thanks for your purchase</h1>
-            <img src= "https://media1.tenor.com/images/adaecd6658c2ac9cb936db1b1c684421/tenor.gif?itemid=18689565"/>
-        </div>
-    );
+  return (
+    <div className="SuccessStripe">
+      <div className="information_buy">
+        <h1>Thanks for your purchase!!</h1>
+        <h2>We will contact you shortly</h2>
+        <img src="/img/airboth.png" />
+        <button>
+          <Link className="button__back" to="/">
+            Back to home
+          </Link>
+        </button>
+      </div>
+        
+    </div>
+  );
 };
 
 export default SuccessStripe;

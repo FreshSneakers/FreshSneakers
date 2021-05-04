@@ -1,0 +1,56 @@
+.SuccessStripe {
+    background: linear-gradient(
+        90deg,
+        rgba(169, 52, 74, 1) 0%,
+        rgba(133, 53, 72, 1) 0%,
+        rgba(139, 57, 81, 1) 20%,
+        rgba(88, 62, 90, 1) 80%,
+        rgba(64, 58, 84, 1) 100%,
+        rgba(66, 58, 85, 1) 100%,
+        rgba(46, 70, 93, 1) 100%,
+        rgba(28, 46, 62, 1) 100%,
+        rgba(0, 68, 108, 1) 100%
+      );
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 100vh;
+  background-color: blueviolet;
+}
+.information_buy {
+  color: white;
+  height: 400px;
+  width: 600px;
+  background-color: rgb(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.information_buy img {
+  width: 250px;
+  padding: 30px;
+}
+.button__back {
+  display: inline-block;
+  outline:none;
+  text-align: center;
+  background:rgba(169, 52, 74, 1) ;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  outline: none;
+  position: relative;
+  min-width: 8.23em;
+  text-decoration: none;
+  font-family: Montserrat, Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+
+}

@@ -14,6 +14,7 @@ import SellDetail from "./components/Sell/SellDetail"
 import Profile from "./components/Profile/Profile"
 import BuyDetail from "./components/Buy/BuyDetail";
 import SuccessStripe from "./components/Success-pages/SuccessStripe";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -32,6 +33,7 @@ function App() {
   return (
     <div className="App">
       <NavBar user={user} />
+      <ToastContainer/>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/login" render={() => <Login doLogin={getUser} />} />
