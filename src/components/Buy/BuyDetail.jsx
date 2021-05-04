@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useHistory, useParams } from 'react-router';
+import { useParams } from 'react-router';
 import { buyDetail, buySneaker } from '../../services/ProductService';
 import PropagateLoader from "react-spinners/PropagateLoader";
 import './BuyDetail.css'
@@ -14,7 +14,6 @@ const BuyDetail = () => {
     const [validation, setValidation] = useState('')
     const [user, setUser] = useState({})
     const { id } = useParams()
-    const { push } = useHistory()
     const stripePromise = loadStripe('pk_test_51ImlDcCK7DlXsOWSgQwCw8fthV4diXaky0Mlg4pOenssObfpgrjpIw2MZqUTjO8ebtIhy9WzM75B5G8ynT7bLss900nxKeMW75');
 
     useEffect(() => {
@@ -32,7 +31,6 @@ const BuyDetail = () => {
             .then((user) => {
                 setUser(user)
             })
-            .catch(() => push('/login'))
     }, [])
 
     const onChange = (e) => {
@@ -69,7 +67,7 @@ const BuyDetail = () => {
                     <div className="BuyDetail container">
                         <div className="Buy__box1">
                             <div className="Buy__box1__image">
-                                <img src={state.image} alt={state.name} />
+                                <img src={state.image} alt={state.model} />
                             </div>
                         </div>
 

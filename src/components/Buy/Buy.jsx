@@ -22,7 +22,10 @@ const Buy = () => {
     return (
         <div className="Buy">
             <div className="B__Header">
-                <h1>Freshsneakers</h1>
+                <div className="container">
+                    <h1>Freshsneakers</h1>
+                    <span>Shop Now</span>
+                </div>
             </div>
             <div className="container B__main">
                 {
