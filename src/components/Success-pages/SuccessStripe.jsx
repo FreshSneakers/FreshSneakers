@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./SuccessStripe.css";
 
 const SuccessStripe = () => {
+
   return (
     <div className="SuccessStripe">
       <div className="information_buy">

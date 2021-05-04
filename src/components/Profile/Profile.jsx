@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {Link} from 'react-router-dom'
-import { useParams } from "react-router";
+import { Link } from 'react-router-dom'
 import { getUserInfo } from "../../services/UserService";
 import { editProfile } from "../../services/UserService";
 import "./profile.css";
@@ -32,7 +31,7 @@ const Profile = () => {
         <img
           className="img__profile"
           src="\img\air-jorda-red.png"
-          style={{width:'150px'}}
+          style={{ width: '150px' }}
           alt="imgProfile"
         />
       </div>
@@ -67,7 +66,7 @@ const Profile = () => {
             <div className="btn__edit">
               <button type="submit">save changes</button>
               <button >
-                <Link  className="button__link" to="/">Back to home</Link>
+                <Link className="button__link" to="/">Back to home</Link>
               </button>
             </div>
           </form>

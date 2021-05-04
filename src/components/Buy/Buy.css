@@ -5,13 +5,17 @@
 
 .B__Header {
     width: 100%;
-    height: 20vh;
-    background: linear-gradient(90deg, rgba(133, 53, 72, 1) 7%, rgba(121, 59, 83, 1) 28%, rgba(60, 58, 83, 1) 51%, rgba(39, 62, 81, 1) 74%, rgba(32, 51, 72, 1) 96%);
+    height: 50vh;
+    /*background: linear-gradient(90deg, rgba(133, 53, 72, 1) 7%, rgba(121, 59, 83, 1) 28%, rgba(60, 58, 83, 1) 51%, rgba(39, 62, 81, 1) 74%, rgba(32, 51, 72, 1) 96%);*/
+    background-image: url('../../assets/fondoHeader.jpeg');
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .B__Header h1 {
@@ -20,6 +24,14 @@
     font-weight: 500;
     color: white;
     letter-spacing: 5px;
+    margin-top: 0px;
+}
+
+.B__Header span {
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: white;
     margin-top: 0px;
 }
 
@@ -62,46 +74,52 @@
         display: none;
     }
 }
-    .card__filter {
-        padding: 25px 0px 20px;
-        background-color: transparent;
-        border: none;
-        font-size: 14px;
-    }
-    .card__img__contain {
-        width: calc(100% - 10px);
-        margin: 20px 10px 30px;
-        -webkit-box-flex: 1;
-        flex-grow: 1;
-        object-fit: contain;
-    }
-    .card__img__contain img {
-        padding: 30px;
-    }
-    .card__brand {
-        font-family: "Helvetica Neue";
-        font-weight: 500;
-        font-size: 12px;
-        color: rgb(129, 129, 129);
-        margin-bottom: 5px;
-    }
-    .card__model {
-        font-family: "Helvetica Neue";
-        color: rgb(0, 0, 0);
-        font-weight: 500;
-        font-size: 14px;
-        text-transform: uppercase;
-        hyphens: auto;
-        line-height: 18px;
-        margin: 0px;
-        overflow: hidden;
-        overflow-wrap: break-word;
-    }
-    .card__price {
-        margin-top: 10px;
-        font-family: "Helvetica Neue";
-        color: rgb(0, 0, 0);
-        font-size: 16px;
-        line-height: 16px;
-        font-weight: bold;
-    }
+
+.card__filter {
+    padding: 25px 0px 20px;
+    background-color: transparent;
+    border: none;
+    font-size: 14px;
+}
+
+.card__img__contain {
+    width: calc(100% - 10px);
+    margin: 20px 10px 30px;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    object-fit: contain;
+}
+
+.card__img__contain img {
+    padding: 30px;
+}
+
+.card__brand {
+    font-family: "Helvetica Neue";
+    font-weight: 500;
+    font-size: 12px;
+    color: rgb(129, 129, 129);
+    margin-bottom: 5px;
+}
+
+.card__model {
+    font-family: "Helvetica Neue";
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+    hyphens: auto;
+    line-height: 18px;
+    margin: 0px;
+    overflow: hidden;
+    overflow-wrap: break-word;
+}
+
+.card__price {
+    margin-top: 10px;
+    font-family: "Helvetica Neue";
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: bold;
+}

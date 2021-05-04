@@ -28,16 +28,20 @@ const Buy = () => {
       })
   }
 
-  return (
-    <div className="Buy">
-      <div className="B__Header">
-        <h1>Freshsneakers</h1>
-      </div>
-      <div className="container B__main">
-        {loading ? (
-          <div className="loading">
-            <PropagateLoader color="#40464A" />
-          </div>
+    return (
+        <div className="Buy">
+            <div className="B__Header">
+                <div className="container">
+                    <h1>Freshsneakers</h1>
+                    <span>Shop Now</span>
+                </div>
+            </div>
+            <div className="container B__main">
+                {
+                    loading ? (
+                        <div className="loading">
+                            <PropagateLoader color="#40464A" />
+             </div>
         ) : (
           <>
             <div className="Buy__result">
