@@ -5,6 +5,8 @@ import { BsFillLockFill } from "react-icons/bs";
 import { login } from "../../services/AuthService";
 import { useHistory } from "react-router";
 import { setAccessToken } from "../../stores/AccessTokenStore";
+import { ToastContainer,toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 // eslint-disable-next-line
 const EMAIL_PATTERN = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
@@ -170,6 +172,7 @@ const Login = ({ doLogin }) => {
                 Forgot Pasword
               </a>
               <input className="login__btn" type="submit" value="Login" />
+              <ToastContainer/>
             </form>
           </div>
         </section>

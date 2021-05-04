@@ -6,6 +6,7 @@ import { BsFillLockFill } from "react-icons/bs";
 import { BsFillHouseDoorFill } from "react-icons/bs";
 import { signup } from '../../services/AuthService';
 import { useHistory } from 'react-router';
+import { toast } from 'react-toastify';
 
 //eslint-disable-next-line
 const EMAIL_PATTERN = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
@@ -119,6 +120,7 @@ const SignUp = () => {
                 .then((response) => {
                     console.log(response)
                     push('/login')
+                    toast.info('we have sent you an activation email')
                 })
         }
     }

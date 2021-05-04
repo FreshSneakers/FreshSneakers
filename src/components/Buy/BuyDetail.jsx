@@ -5,6 +5,7 @@ import PropagateLoader from "react-spinners/PropagateLoader";
 import './BuyDetail.css'
 import { loadStripe } from '@stripe/stripe-js'
 import { getUserInfo } from "../../services/UserService";
+import { toast } from 'react-toastify';
 
 const BuyDetail = () => {
 

@@ -25,3 +25,7 @@ export const sellDetail = (id) => {
 export const sellSneaker = (body) => {
     return http.post('/sell/sneaker', body)
 }
+
+export const filterProductBuy = (data) => {
+    return http.get('/buy',{params:{brand: data, price:data}})
+}
