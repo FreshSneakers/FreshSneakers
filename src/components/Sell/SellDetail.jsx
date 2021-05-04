@@ -4,6 +4,7 @@ import { sellDetail, sellSneaker } from '../../services/ProductService';
 import './SellDetail.css'
 import PropagateLoader from "react-spinners/PropagateLoader";
 import { getUserInfo } from "../../services/UserService";
+import { toast } from 'react-toastify';
 
 const SellDetail = () => {
     const [state, setState] = useState({})
@@ -54,7 +55,8 @@ const SellDetail = () => {
                     .then((res) => {
                         //hacer una page de "tu product está en venta PLUS correo nodemailer y page en profile con tus ventas y compras"
                         console.log(res)
-                        push('/sell')
+                        toast.info('Your sale has been successful')
+                        push('/sellOk')
                     })
             }else{
                 push('/login')

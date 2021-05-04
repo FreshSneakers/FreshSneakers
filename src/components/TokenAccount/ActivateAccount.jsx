@@ -4,12 +4,16 @@ import { activate } from "../../services/AuthAccount";
 import { Link } from "react-router-dom";
 /*import FadeLoader from "react-spinners/FadeLoader";*/
 import "./ActivateAccount.css";
+import { toast } from "react-toastify";
 
 const ActivateAccount = () => {
   const { token } = useParams();
+  
   /*const [loading, setLoading] = useState(true);*/
 
   useEffect(() => {
+    activate(token)
+    toast.info('Your account has been successfully activated')
     activate(token);
   }, [token]);
 
