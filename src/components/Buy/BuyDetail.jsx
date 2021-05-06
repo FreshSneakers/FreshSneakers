@@ -6,6 +6,7 @@ import './BuyDetail.css'
 import { loadStripe } from '@stripe/stripe-js'
 import { getUserInfo } from "../../services/UserService";
 import { AiOutlineCheck } from "react-icons/ai";
+import { AiOutlineHome } from "react-icons/ai";
 
 const BuyDetail = () => {
 
@@ -97,11 +98,11 @@ const BuyDetail = () => {
                                     <div className="modal__footer">
                                         <input className="buy__btn__modal" onClick={onSubmit} type="submit" value="Confirm Purchase" />
                                     </div>
-                                        {
-                                            validation.length > 0 ?
-                                                <h5 style={{ color: 'red', textAlign:'center' }}>{validation}</h5>
-                                                : ''
-                                        }
+                                    {
+                                        validation.length > 0 ?
+                                            <h5 style={{ color: 'red', textAlign: 'center' }}>{validation}</h5>
+                                            : ''
+                                    }
                                 </div>
                             </div>
                         </div>
@@ -116,7 +117,7 @@ const BuyDetail = () => {
                                 <h1>{state.model}</h1>
                             </div>
 
-                            <div className="Buy__title_size">
+                            <div className="Buy__about mb-3">
                                 <label>SELECT US SIZE</label>
                             </div>
                             <div className="select">
@@ -133,8 +134,14 @@ const BuyDetail = () => {
                                     }
                                 </select>
                             </div>
-
-                            <div className="Buy__about">
+                            <div className="Buy__about mb-3">
+                                <label>Shipping Address</label>
+                            </div>
+                            <div class="input-group flex-nowrap">
+                                <span class="input-group-text" id="addon-wrapping"><AiOutlineHome /></span>
+                                <input type="text" class="form-control" placeholder="Address" aria-describedby="addon-wrapping" placeholder="Address" value={user.address} />
+                            </div>
+                            <div className="Buy__about mb-3">
                                 <label>About this product</label><br />
                                 <p>
                                     {state.description}
@@ -148,7 +155,7 @@ const BuyDetail = () => {
                                 <h2>Colour: {state.color}</h2>
                                 <input className="sell__btn" type="submit" value="Buy now" data-bs-toggle="modal" data-bs-target="#exampleModal" />
                             </div>
-                        
+
                         </div>
                     </div>
                 )

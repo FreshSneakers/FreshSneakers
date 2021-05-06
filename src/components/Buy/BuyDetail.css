@@ -38,6 +38,7 @@
 .Buy__box2 {
     width: 42%;
     height: 60vh;
+    overflow: auto;
 }
 
 .Buy__box1__image {
@@ -75,7 +76,7 @@
     margin-top: 10px;
 }
 
-.Buy__body__condition h5{
+.Buy__body__condition h5 {
     font-size: 14px;
 }
 
@@ -155,4 +156,5 @@
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+    font-size: 13px;
 }
