@@ -122,7 +122,7 @@ const BuyDetail = () => {
                             <div className="select">
 
                                 <select name="size" id="size" onChange={onChange}>
-                                    <option value disabled>Select a size</option>
+                                    <option value="">Select a size</option>
                                     {
                                         state.sizes.length > 0
                                             ?
