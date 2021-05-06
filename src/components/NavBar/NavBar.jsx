@@ -51,7 +51,7 @@ const NavBar = ({ user }) => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" style={{ color: "#FFF" }} to="/contact-us">
+              <Link className="nav-link" style={{ color: "#FFF" }} to="/contact">
                 Contact us{" "}
               </Link>
             </li>

@@ -15,6 +15,8 @@ import Profile from "./components/Profile/Profile"
 import BuyDetail from "./components/Buy/BuyDetail";
 import SuccessStripe from "./components/Success-pages/SuccessStripe";
 import { ToastContainer } from "react-toastify";
+import SellOk from "./components/Sell/SellOk";
+import ContactUs from "./components/ContactUs/ContactUs";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -40,6 +42,8 @@ function App() {
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/buy" component={Buy} />
         <Route exact path="/sell" component={Sell} />
+        <Route exact path="/contact" component={ContactUs} />
+        <Route exact path="/sellOk" component={SellOk}/>
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/successful-pay" component={SuccessStripe}/>
         <Route exact path="/sneaker-buy/:id" component={BuyDetail} />

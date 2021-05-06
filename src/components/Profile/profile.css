@@ -29,7 +29,6 @@
   align-items: center;
 }
 
-
 .prBox__1 img {
   width: 120px;
 }
@@ -85,10 +84,6 @@
   text-decoration: none;
   font-family: Montserrat, Roboto, Helvetica, Arial, sans-serif;
   font-size: 1.1rem;
-
-}
-.btn__edit{
-   
 }
 
 .btn__edit .button__link {
@@ -97,15 +92,12 @@
   color: black;
 }
 @media only screen and (max-width: 650px) {
-    .prBox__1 {
-      display: none;
-    }
-   
-    
+  .prBox__1 {
+    display: none;
   }
-  @media only screen and (max-width: 450px) {
-    .btn__edit button {
-      padding:10px 
-    }
-    
+}
+@media only screen and (max-width: 450px) {
+  .btn__edit button {
+    padding: 10px;
   }
+}
