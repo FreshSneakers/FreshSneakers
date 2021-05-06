@@ -3,6 +3,7 @@ import { useHistory } from "react-router";
 import "./ContactUs.css";
 import { contact } from "../../services/UserService";
 import { toast } from "react-toastify";
+// eslint-disable-next-line
 const EMAIL_PATTERN = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
 //eslint-disable-next-line
@@ -42,6 +43,14 @@ const validators = {
     }
     return message;
   },
+  incidences: (value) => {
+    let message;
+
+    if (!value) {
+      message = "Incidence is required";
+    }
+    return message;
+  },
 };
 
 const ContactUs = () => {
@@ -52,19 +61,20 @@ const ContactUs = () => {
       email: "",
       message: "",
       phone: "",
+      incidences:""
     },
     errors: {
       name: validators.name(),
       email: validators.email(),
       phone: validators.phone(),
       message: validators.message(),
+      incidences: validators.incidences(),
     },
   });
 
   const onSubmit = (e) => {
     const { fields } = state;
     e.preventDefault();
-    console.log("dddddd");
     if (isValid()) {
       console.log("hola");
       contact(fields).then((response) => {
@@ -83,6 +93,7 @@ const ContactUs = () => {
 
   const onChange = (e) => {
     const { name, value } = e.target;
+    console.log(e.target.value)
     setState((prevState) => ({
       fields: {
         ...prevState.fields,
@@ -145,9 +156,9 @@ const ContactUs = () => {
             <div className="check__box">
               <h4>Check one option</h4>
               <div className="checkout__1">
-                <input type="radio" name="incidence" value/> Incidence<br></br>
-                <input type="radio" name="information" /> Information<br></br>
-                <input type="radio" name="others" /> Other<br></br>
+                <input type="radio" name="incidence" onChange={onChange} value='incidence1'/> Incidence1<br/>
+                <input type="radio" name="information" onChange={onChange} value='incidence2' /> Incidence2<br/>
+                <input type="radio" name="others" onChange={onChange} value='incidence3'/> Incidence3<br/>
               </div>
             </div>
             <div className="contact__edit">
