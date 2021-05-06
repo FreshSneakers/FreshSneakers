@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./SuccessStripe.css";
 
 const SuccessStripe = () => {
+
   return (
     <div className="SuccessStripe">
       <div className="information_buy">
@@ -14,6 +15,12 @@ const SuccessStripe = () => {
                 <Link  className="button__go__home" to="/">Back to home</Link>
               </button>
             </div>
+        <img src="/img/zapa__fondo.png" alt="ok" />
+        <button>
+          <Link className="button__back" to="/">
+            Back to home
+          </Link>
+        </button>
       </div>
         
     </div>

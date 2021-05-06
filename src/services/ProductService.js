@@ -2,8 +2,8 @@ import { create } from '../services/BaseService'
 
 const http = create()
 
-export const getProducts = () => {
-    return http.get('/buy')
+export const getProducts = (brand, price) => {
+    return http.get('/buy', { params: { brand: brand, price: price } })
 }
 
 export const filterProduct = (data) => {
@@ -24,8 +24,4 @@ export const sellDetail = (id) => {
 
 export const sellSneaker = (body) => {
     return http.post('/sell/sneaker', body)
-}
-
-export const filterProductBuy = (data) => {
-    return http.get('/buy',{params:{brand: data, price:data}})
 }

@@ -62,9 +62,9 @@
 
 .H__btn {
     display: flex;
-    padding: 1.2rem;
+    padding: 1.2rem 3.2rem;
     color: #f7f7f6;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 900;
     transition: all .5s;
 }
