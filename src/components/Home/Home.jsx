@@ -10,8 +10,8 @@ const Home = () => {
                     <h1>FRESHSNEAKERS</h1>
                     <p>remains the premier source for authentic, rare sneakers.</p>
                     <div className="H__info__btns">
-                        <Link to="/" style={{ textDecoration: 'none', color: 'white' }} className="H__btn discover-btn">BUY</Link>
-                        <Link to="/" style={{ textDecoration: 'none', color: 'white' }} className="H__btn cart-btn">SELL</Link>
+                        <Link to="/buy" style={{ textDecoration: 'none', color: 'white' }} className="H__btn discover-btn">BUY</Link>
+                        <Link to="/sell" style={{ textDecoration: 'none', color: 'white' }} className="H__btn cart-btn">SELL</Link>
                     </div>
                 </div>
             </div>
