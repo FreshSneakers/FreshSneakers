@@ -55,7 +55,7 @@ const SellDetail = () => {
                     .then((res) => {
                         //hacer una page de "tu product está en venta PLUS correo nodemailer y page en profile con tus ventas y compras"
                         console.log(res)
-                        toast.info('Your sale has been successful')
+                        toast.info('Your sale has been successfully')
                         push('/sellOk')
                     })
             }else{

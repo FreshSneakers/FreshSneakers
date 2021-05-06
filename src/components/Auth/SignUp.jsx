@@ -120,7 +120,7 @@ const SignUp = () => {
                 .then((response) => {
                     console.log(response)
                     push('/login')
-                    toast.info('we have sent you an activation email')
+                    toast.info('We have sent you an activation email')
                 })
         }
     }
