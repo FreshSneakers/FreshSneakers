@@ -9,11 +9,11 @@ const SuccessStripe = () => {
         <h1>Thanks for your purchase!!</h1>
         <h2>We will contact you shortly</h2>
         <img src="/img/airboth.png" />
-        <button>
-          <Link className="button__back" to="/">
-            Back to home
-          </Link>
-        </button>
+        <div className="btn__succes">
+              <button >
+                <Link  className="button__go__home" to="/">Back to home</Link>
+              </button>
+            </div>
       </div>
         
     </div>

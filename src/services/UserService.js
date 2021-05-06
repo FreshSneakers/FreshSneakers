@@ -9,3 +9,7 @@ export const getUserInfo = () => {
 export const editProfile = (body) => {
   return http.post('/profile',body);
 };
+
+export const contact = (body) => {
+  return http.post('/contact', body)
+}

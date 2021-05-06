@@ -38,19 +38,27 @@
   width: 250px;
   padding: 30px;
 }
-.button__back {
+
+.btn__succes button{
+  margin-top: 30px;
   display: inline-block;
-  outline:none;
   text-align: center;
-  background:rgba(169, 52, 74, 1) ;
-  color: white;
+  background: #eee;
+  color: #1a1e24;
   font-weight: bold;
-  padding: 10px;
-  outline: none;
+  padding: 15px;
+  line-height: 1;
+  border-radius: 1em;
   position: relative;
   min-width: 8.23em;
   text-decoration: none;
   font-family: Montserrat, Roboto, Helvetica, Arial, sans-serif;
   font-size: 1.1rem;
-
 }
+.btn__succes .button__go__home{
+  text-decoration: none;
+  outline: none;
+  color: black;
+}
+
+
