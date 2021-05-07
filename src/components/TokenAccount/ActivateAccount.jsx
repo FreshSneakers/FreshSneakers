@@ -8,13 +8,10 @@ import { toast } from "react-toastify";
 
 const ActivateAccount = () => {
   const { token } = useParams();
-  
-  /*const [loading, setLoading] = useState(true);*/
 
   useEffect(() => {
     activate(token)
-    toast.info('Your account has been successfully activated')
-    activate(token);
+      .then(() => toast.info('Your account has been successfully activated'))
   }, [token]);
 
   return (
