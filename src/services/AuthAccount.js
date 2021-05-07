@@ -4,6 +4,6 @@ const http = create({
     useAccessToken: false
 })
 
-export const activate = (token) => {
+export const activateAccount = (token) => {
     return http.get(`/activate/${token}`)
 }
