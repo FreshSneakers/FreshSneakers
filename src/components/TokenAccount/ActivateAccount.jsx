@@ -11,21 +11,22 @@ const ActivateAccount = () => {
 
   useEffect(() => {
     activate(token)
-      .then(() => toast.info('Your account has been successfully activated'))
-  }, [token]);
+      .then((res) =>  console.log(res))
+      toast.info('Your account has been successfully activated')
+}, [token]);
 
-  return (
-    <div className=" container__1">
-      <div className="box__1">
-        <h1 className="title__account">Congratulatiosn!!</h1>
-        <h1 className="title__account">Your account has been activated!</h1>
-        <img className="zapa" src="/img/zapa__fondo.png" alt="perfil" />
-        <button className="button">
-          <Link to="/login" style={{textDecoration:'none', color:'black'}}>Go to login</Link>
-        </button>
-      </div>
+return (
+  <div className=" container__1">
+    <div className="box__1">
+      <h1 className="title__account">Congratulatiosn!!</h1>
+      <h1 className="title__account">Your account has been activated!</h1>
+      <img className="zapa" src="/img/zapa__fondo.png" alt="perfil" />
+      <button className="button">
+        <Link to="/login" style={{ textDecoration: 'none', color: 'black' }}>Go to login</Link>
+      </button>
     </div>
-  );
+  </div>
+);
 };
 
 export default ActivateAccount;
