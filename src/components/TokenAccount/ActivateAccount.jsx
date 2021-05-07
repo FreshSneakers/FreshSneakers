@@ -14,7 +14,7 @@ const ActivateAccount = () => {
     activateAccount(token)
       .then(() => setLoading(false))
     toast.info('Your account has been successfully activated')
-  }, [token]);ƒ
+  }, [token]);
 
   return (
     <div className=" container__1">
