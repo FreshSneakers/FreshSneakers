@@ -53,8 +53,7 @@ const BuyDetail = () => {
                 .catch((e) => console.log(e))
         }
     }
-
-    console.log(state);
+    
     return (
         <div className="BuyBox">
             <div className="Buy__header">

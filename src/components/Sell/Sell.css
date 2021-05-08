@@ -140,6 +140,10 @@
   justify-content: center;
 }
 
+.sell__result__right h5{
+  font-size: 17px;
+}
+
 @media only screen and (max-width: 650px) {
   .sell__title h1 {
     font-size: 30px;

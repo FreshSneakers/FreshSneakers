@@ -30,8 +30,8 @@ const Profile = () => {
       <div className="prBox__1">
         <img
           className="img__profile"
-          src="\img\air-jorda-red.png"
-          style={{ width: '150px' }}
+          src="/img/profile.png"
+          style={{ width: '300px' }}
           alt="imgProfile"
         />
       </div>
@@ -64,8 +64,8 @@ const Profile = () => {
               onChange={onChange}
             />
             <div className="btn__edit">
-              <button type="submit">save changes</button>
-              <button >
+              <button type="submit">Save changes</button>
+              <button>
                 <Link className="button__link" to="/">Back to home</Link>
               </button>
             </div>
