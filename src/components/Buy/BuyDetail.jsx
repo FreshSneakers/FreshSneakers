@@ -39,7 +39,6 @@ const BuyDetail = () => {
         setParams(e.target.value)
     }
 
-
     const onSubmit = async () => {
         const stripe = await stripePromise;
         if (Object.keys(params).length === 0) {
@@ -47,7 +46,6 @@ const BuyDetail = () => {
         } else {
             buySneaker(id, params, user)
                 .then((response) => {
-                    console.log(response.sessionId)
                     stripe.redirectToCheckout({
                         sessionId: response.sessionId
                     })
@@ -55,7 +53,7 @@ const BuyDetail = () => {
                 .catch((e) => console.log(e))
         }
     }
-
+    
     return (
         <div className="BuyBox">
             <div className="Buy__header">
@@ -68,7 +66,7 @@ const BuyDetail = () => {
                     </div>
                 ) : (
                     <div className="BuyDetail container">
-                        <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div className="modal-dialog modal-dialog-centered">
                                 <div className="modal-content">
                                     <div className="modal-header">
@@ -96,7 +94,7 @@ const BuyDetail = () => {
                                         </div>
                                     </div>
                                     <div className="modal__footer">
-                                        <input className="buy__btn__modal" onClick={onSubmit} type="submit" value="Confirm Purchase" />
+                                        <button className="buy__btn__modal" onClick={onSubmit} type="submit">Confirm</button>
                                     </div>
                                     {
                                         validation.length > 0 ?
@@ -123,7 +121,7 @@ const BuyDetail = () => {
                             <div className="select">
 
                                 <select name="size" id="size" onChange={onChange}>
-                                    <option value disabled>Select a size</option>
+                                    <option value="">Select a size</option>
                                     {
                                         state.sizes.length > 0
                                             ?
@@ -137,9 +135,9 @@ const BuyDetail = () => {
                             <div className="Buy__about mb-3">
                                 <label>Shipping Address</label>
                             </div>
-                            <div class="input-group flex-nowrap">
-                                <span class="input-group-text" id="addon-wrapping"><AiOutlineHome /></span>
-                                <input type="text" class="form-control" placeholder="Address" aria-describedby="addon-wrapping" placeholder="Address" value={user.address} />
+                            <div className="input-group flex-nowrap">
+                                <span className="input-group-text" id="addon-wrapping"><AiOutlineHome /></span>
+                                <input type="text" className="form-control" placeholder="Address" placeholder="Address" onChange={onChange} value={user.address} />
                             </div>
                             <div className="Buy__about mb-3">
                                 <label>About this product</label><br />
@@ -153,7 +151,7 @@ const BuyDetail = () => {
                             <div className="Buy__box2__title">
                                 <h2>condition: New</h2>
                                 <h2>Colour: {state.color}</h2>
-                                <input className="sell__btn" type="submit" value="Buy now" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                                <button className="sell__btn" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal" >Buy now</button>
                             </div>
 
                         </div>

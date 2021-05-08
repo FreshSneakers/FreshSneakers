@@ -1,0 +1,79 @@
+.Orders {
+    background-color: white;
+    height: 100vh;
+}
+
+.orders__header {
+    width: 100%;
+    height: 42vh;
+    background-image: url('https://int.stadiumgoods.com/BWStaticContent/54000/4833b22f-4258-40ce-a0f2-e5f82983f763_travis-6-desktop-edit.jpg');
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.orders__header h1 {
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: white;
+    letter-spacing: 5px;
+    margin-top: 0px;
+}
+
+.order_box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.order__box__buy {
+    width: 50%;
+    height: 60vh;
+}
+
+.order__box__sell {
+    width: 50%;
+    height: 60vh;
+}
+
+.order__box__title {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 0px 20px;
+}
+
+.order__box__title h1 {
+    margin: 0px;
+    font-size: 24px;
+    line-height: 26px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+}
+
+.overResultBuy {
+    height: 480px;
+    overflow: auto;
+}
+
+.order__result {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: solid 1px #CFCFCF;
+    padding: 25px;
+}
+
+.order__result{
+
+}

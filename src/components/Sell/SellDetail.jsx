@@ -13,6 +13,7 @@ const SellDetail = () => {
     const [validation, setValidation] = useState('')
     const { id } = useParams()
     const { push } = useHistory()
+    const sizes = ['36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48']
 
     useEffect(() => {
         sellDetail(id)
@@ -32,37 +33,35 @@ const SellDetail = () => {
     }, [])
 
     useEffect(() => {
-        if(user){
+        if (user) {
             setState((prevState) => {
-               return {...prevState, user: user.id}
-           })
+                return { ...prevState, user: user.id }
+            })
         }
     }, [user])
 
     const onChange = (e) => {
         const { name, value } = e.target
         setState(prevState => {
-            return { ...prevState, [name]:value}
+            return { ...prevState, [name]: value }
         })
     }
 
     const onSubmit = () => {
-        if(state.size){
-            if(user){
-                console.log(user)
-                console.log(state)
+        if (state.size) {
+            if (user) {
                 sellSneaker(state)
                     .then((res) => {
                         //hacer una page de "tu product está en venta PLUS correo nodemailer y page en profile con tus ventas y compras"
                         console.log(res)
                         toast.info('Your sale has been successfully')
-                        push('/sellOk')
+                        push('/success-sell')
                     })
-            }else{
+            } else {
                 push('/login')
             }
-        }else{
-           setValidation('Choose a size')
+        } else {
+            setValidation('Choose a size')
         }
     }
 
@@ -78,6 +77,44 @@ const SellDetail = () => {
                     </div>
                 ) : (
                     <div className="SellDetail container">
+                            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div className="modal-dialog modal-dialog-centered">
+                                    <div className="modal-content">
+                                        <div className="modal-header">
+                                            <h5 className="modal-title" id="exampleModalLabel">{state.model}</h5>
+                                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div className="modal-body">
+                                            <div className="Buy__img__modal">
+                                                <img src={state.image} alt={state.model} />
+                                            </div>
+                                            <div className="Buy__body__modal">
+                                                <div className="Buy__body__modal_box">
+                                                    <span style={{ color: '#898989' }}>SIZE</span>
+                                                    <h5>{state.size} €</h5>
+                                                </div>
+                                                <div className="Buy__body__modal_box">
+                                                    <span style={{ color: '#898989' }}>PRICE</span>
+                                                    <h5>{state.price} €</h5>
+                                                </div>
+                                            </div>
+                                            <div className="Buy__body__condition">
+                                                <h5>New & Unworn</h5>
+                                                <h5>In Original Box</h5>
+                                                <h5>Verifed Authentic</h5>
+                                            </div>
+                                        </div>
+                                        <div className="modal__footer">
+                                            <button className="buy__btn__modal" onClick={onSubmit} type="submit" data-bs-dismiss="modal">Confirm</button>
+                                        </div>
+                                        {
+                                            validation.length > 0 ?
+                                                <h5 style={{ color: 'red', textAlign: 'center' }}>{validation}</h5>
+                                                : ''
+                                        }
+                                    </div>
+                                </div>
+                            </div>
                         <div className="Sell__box1">
                             <div className="Sell__box1__image">
                                 <img src={state.image} alt={state.name} />
@@ -95,15 +132,10 @@ const SellDetail = () => {
                             </div>
                             <div className="select">
                                 <select name="size" id="size" onChange={onChange}>
-                                    <option value disabled>Select a size</option>
-                                    <option value="38">38</option>
-                                    <option value="39">39</option>
-                                    <option value="40">40</option>
-                                    <option value="41">41</option>
-                                    <option value="42">42</option>
-                                    <option value="43">43</option>
-                                    <option value="44">44</option>
-                                    <option value="45">45</option>
+                                    <option value="">Select a size</option>
+                                    {sizes.map((size) => (
+                                        <option key={size} value={size}>{size}</option>
+                                    ))} 
                                 </select>
                             </div>
 
@@ -119,12 +151,12 @@ const SellDetail = () => {
                             <div className="Sell__box2__title">
                                 <h2>condition: New</h2>
                                 <h2>Colour: {state.color}</h2>
-                                <input className="sell__btn" type="submit" onClick={onSubmit}  value="Sell now" />
+                                    <button className="sell__btn" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal" >Sell now</button>
                             </div>
                             {
-                                validation.length > 0 ? 
-                                <h4 style={{color:'red'}}>{validation}</h4>
-                                : ''
+                                validation.length > 0 ?
+                                    <h4 style={{ color: 'red' }}>{validation}</h4>
+                                    : ''
                             }
                         </div>
                     </div>
