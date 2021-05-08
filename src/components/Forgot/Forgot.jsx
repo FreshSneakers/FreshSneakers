@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { forgot } from "../../services/UserService";
+import {toast} from "react-toastify"
 
 const Forgot = () => {
   const [state, setState] = useState({});
@@ -14,6 +15,7 @@ const Forgot = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     forgot(state);
+    toast.info('We have sent you an email to reset your password')
   };
 
   return (

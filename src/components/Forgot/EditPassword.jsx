@@ -23,22 +23,15 @@ const EditPassword = () => {
         <div className="edit__information">
           <h1>Reset password</h1>
           <form autoComplete="off" onSubmit={onSubmit} className="edit__form">
-            <p> Enter your password:</p>
+            <p> Enter your new password:</p>
             <input
               className="input__email"
-              name="email"
+              name="password"
               type="password"
               value={state.password}
               onChange={onChange}
             />
-            <p> Confirm your password:</p>
-            <input
-              className="input__email"
-              name="email"
-              type="password"
-              value={state.password}
-              onChange={onChange}
-            />
+           
             <div className="btn__edit">
               <button type="submit">Reset password</button>
             </div>
