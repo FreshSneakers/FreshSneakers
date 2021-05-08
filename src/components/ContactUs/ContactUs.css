@@ -45,6 +45,7 @@
 .contactUs__2 input {
   margin: 9px;
   outline: none;
+  width: 300px;
 }
 
 .contact__edit button {
@@ -63,4 +64,14 @@
     text-decoration: none;
     font-family: Montserrat, Roboto, Helvetica, Arial, sans-serif;
     font-size: 1.1rem;
+}
+.checkout__1 input{
+  width: auto;
+
+}
+.check__box select{
+  color: black;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: white;
 }
