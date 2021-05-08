@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { logout } from '../../stores/AccessTokenStore'
-import cartImg from '../../assets/shopping-cart.png';
-
 
 const NavBar = ({ user }) => {
   return (
@@ -46,8 +44,8 @@ const NavBar = ({ user }) => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" style={{ color: "#FFF" }} to="/auction">
-                Auction
+              <Link className="nav-link" style={{ color: "#FFF" }} to="/orders">
+                Orders
               </Link>
             </li>
             <li className="nav-item">
@@ -56,11 +54,6 @@ const NavBar = ({ user }) => {
               </Link>
             </li>
           </ul>
-          <img
-            src={cartImg}
-            alt="cart"
-            style={{ height: "25px" }}
-          />
           {!user ? (
             <>
               <Link className="nav-link" style={{ color: "#FFF" }} to="/signup">

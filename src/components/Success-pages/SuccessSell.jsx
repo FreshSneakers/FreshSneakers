@@ -1,11 +1,7 @@
 import React from "react";
 import {Link} from 'react-router-dom'
 
-/*import FadeLoader from "react-spinners/FadeLoader";*/
-
-
-const SellOk = () => {
- 
+const SuccessSell = () => {
 
   return (
     <div className=" container__1">
@@ -21,4 +17,4 @@ const SellOk = () => {
   );
 };
 
-export default SellOk;
+export default SuccessSell;

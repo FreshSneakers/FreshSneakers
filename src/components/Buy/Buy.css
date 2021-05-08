@@ -6,7 +6,6 @@
 .B__Header {
     width: 100%;
     height: 50vh;
-    /*background: linear-gradient(90deg, rgba(133, 53, 72, 1) 7%, rgba(121, 59, 83, 1) 28%, rgba(60, 58, 83, 1) 51%, rgba(39, 62, 81, 1) 74%, rgba(32, 51, 72, 1) 96%);*/
     background-image: url('../../assets/fondoHeader.jpeg');
     display: flex;
     flex-direction: column;

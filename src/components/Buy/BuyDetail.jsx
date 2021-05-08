@@ -26,7 +26,7 @@ const BuyDetail = () => {
             .then(() => {
                 setLoading(false)
             })
-    }, [id, state])
+    }, [id])
 
     useEffect(() => {
         getUserInfo()
@@ -46,7 +46,6 @@ const BuyDetail = () => {
         } else {
             buySneaker(id, params, user)
                 .then((response) => {
-                    console.log(response.sessionId)
                     stripe.redirectToCheckout({
                         sessionId: response.sessionId
                     })
@@ -54,7 +53,7 @@ const BuyDetail = () => {
                 .catch((e) => console.log(e))
         }
     }
-
+    
     return (
         <div className="BuyBox">
             <div className="Buy__header">
@@ -152,7 +151,7 @@ const BuyDetail = () => {
                             <div className="Buy__box2__title">
                                 <h2>condition: New</h2>
                                 <h2>Colour: {state.color}</h2>
-                                <button className="sell__btn" type="submit"  data-bs-toggle="modal" data-bs-target="#exampleModal" >Buy now</button>
+                                <button className="sell__btn" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal" >Buy now</button>
                             </div>
 
                         </div>
