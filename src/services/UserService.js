@@ -13,3 +13,11 @@ export const editProfile = (body) => {
 export const contact = (body) => {
   return http.post('/contact', body)
 }
+
+export const forgot = (body) => {
+  return http.post('/forgot',body)
+}
+
+export const editPassword = (body) => {
+  return http.post('/edit-password',body)
+}

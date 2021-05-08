@@ -61,7 +61,7 @@ const ContactUs = () => {
       email: "",
       message: "",
       phone: "",
-      incidences:""
+      incidences: "",
     },
     errors: {
       name: validators.name(),
@@ -74,6 +74,7 @@ const ContactUs = () => {
 
   const onSubmit = (e) => {
     const { fields } = state;
+    console.log(state)
     e.preventDefault();
     if (isValid()) {
       console.log("hola");
@@ -93,7 +94,7 @@ const ContactUs = () => {
 
   const onChange = (e) => {
     const { name, value } = e.target;
-    console.log(e.target.value)
+    console.log(e.target.value);
     setState((prevState) => ({
       fields: {
         ...prevState.fields,
@@ -106,7 +107,7 @@ const ContactUs = () => {
     }));
   };
 
-  const { name, email, message, phone,incidences } = state.fields;
+  const { name, email, message, phone, incidences } = state.fields;
 
   return (
     <div className="contact">
@@ -145,7 +146,7 @@ const ContactUs = () => {
             />
             <textarea
               rows="8"
-              cols="50"
+              cols="36"
               placeholder="write here your text..."
               className="contact__message"
               name="message"
@@ -154,15 +155,31 @@ const ContactUs = () => {
               onChange={onChange}
             ></textarea>
             <div className="check__box">
-              <h4>Check one option</h4>
-              <div className="checkout__1">
-                <input type="radio" name="incidence" onChange={onChange} value='incidence1'/> Incidence1<br/>
-                <input type="radio" name="information" onChange={onChange} value='incidence2' /> Incidence2<br/>
-                <input type="radio" name="others" onChange={onChange} value='incidence3'/> Incidence3<br/>
-              </div>
+              <select name="select">
+                <option selected value="0">
+                  Check one option
+                </option>
+                <option
+                  name="incidence1"
+                  onChange={onChange}
+                  value={incidences}
+                >
+                  my order has not arrived
+                </option>
+                <option
+                  name="information"
+                  onChange={onChange}
+                  value={incidences}
+                >
+                  information
+                </option>
+                <option name="others" onChange={onChange} value={incidences}>
+                  problems with the payment of my order
+                </option>
+              </select>
             </div>
             <div className="contact__edit">
-              <button type="submit" value="contact us" >
+              <button type="submit" value="contact us">
                 submit
               </button>
             </div>
