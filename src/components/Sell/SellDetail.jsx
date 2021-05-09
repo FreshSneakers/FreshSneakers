@@ -145,11 +145,11 @@ const SellDetail = () => {
                                 <label style={{ fontWeight: 'bold' }}>Product condition</label><br />
 
                                 <div className="Sell__box2__condition mt-3">
-                                    <h5><AiOutlineCheck className="mr-2" />My sneakers are new unworn with the original undamaged box</h5>
-                                    <h5><AiOutlineCheck className="mr-2" />I will ship within 2 business days of sale to avoid penalities</h5>
                                     <h5><AiOutlineCheck className="mr-2" />New & Unworn</h5>
                                     <h5><AiOutlineCheck className="mr-2" />In Original Box</h5>
                                     <h5><AiOutlineCheck className="mr-2" />Verifed Authentic</h5>
+                                    <h5><AiOutlineCheck className="mr-2" />My sneakers are new unworn with the original</h5>
+                                    <h5><AiOutlineCheck className="mr-2" />I will ship within 2 business days of sale </h5>
                                 </div>
                             </div>
                             <div className="Sell__box2__title">

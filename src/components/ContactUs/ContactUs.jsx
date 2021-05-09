@@ -6,9 +6,6 @@ import { toast } from "react-toastify";
 // eslint-disable-next-line
 const EMAIL_PATTERN = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
-//eslint-disable-next-line
-const PASSWORD_PATTERN = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
-
 const validators = {
   name: (value) => {
     let message;
@@ -127,6 +124,7 @@ const ContactUs = () => {
               type="text"
               value={name}
               onChange={onChange}
+              placeholder="Name"
             />
             Email:
             <input
@@ -135,6 +133,7 @@ const ContactUs = () => {
               type="text"
               value={email}
               onChange={onChange}
+              placeholder="Email"
             />
             Phone:
             <input
@@ -143,37 +142,36 @@ const ContactUs = () => {
               type="text"
               value={phone}
               onChange={onChange}
+              placeholder="Phone"
             />
+            Incidence
             <textarea
               rows="8"
               cols="36"
-              placeholder="write here your text..."
-              className="contact__message"
+              placeholder="Write your incidence..."
+              className="contact__message mt-2"
               name="message"
               type="text"
               value={message}
               onChange={onChange}
             ></textarea>
             <div className="check__box">
-              <select name="select">
+              <select name="select" onChange={onChange}>
                 <option selected value="0">
                   Check one option
                 </option>
                 <option
-                  name="incidence1"
-                  onChange={onChange}
-                  value={incidences}
-                >
+                  name="incidence"
+                  value={incidences}>
                   my order has not arrived
                 </option>
                 <option
-                  name="information"
-                  onChange={onChange}
-                  value={incidences}
-                >
+                  name="incidence"
+                  value={incidences}>
                   information
                 </option>
-                <option name="others" onChange={onChange} value={incidences}>
+                <option name="incidence"
+                  value={incidences}>
                   problems with the payment of my order
                 </option>
               </select>
