@@ -69,7 +69,7 @@ const Orders = () => {
                                                     </div>
                                                 </div>
                                             ))) : (
-                                            <h5 style={{ textAlign: 'center' }} className="mt-3">You have not made any purchase</h5>
+                                            <h5 style={{ textAlign: 'center' }} className="mt-5">You have not made any purchase</h5>
                                         )
                                     }
                                 </div>

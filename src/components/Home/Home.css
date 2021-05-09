@@ -97,14 +97,14 @@
         font-size: 2.2rem;
     }
     .H__product__info p {
-        font-size: 1.3rem;
+        font-size: 1rem;
     }
     .H__product__info h2 {
         font-size: 1.9rem;
     }
     .H__btn {
         display: flex;
-        padding: 1.2rem;
+        padding: 1.2rem 2rem;
         color: #f7f7f6;
         font-size: 1rem;
         font-weight: 900;
@@ -148,7 +148,7 @@
     }
     .H__btn {
         display: flex;
-        padding: 1rem;
+        padding: 1rem 1.5rem;
         color: #f7f7f6;
         font-size: 13px;
         font-weight: 900;

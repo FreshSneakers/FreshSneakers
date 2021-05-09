@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { logout } from '../../stores/AccessTokenStore'
+import logo from '../../assets/logo.png';
 
 const NavBar = ({ user }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-dark">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/" style={{ color: "#FFF" }}>
-          Logo
+          <img src={logo} alt="logo" style={{height:'40px', width:'45px'}}/>
         </Link>
         <button
           className="navbar-toggler"

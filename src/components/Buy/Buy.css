@@ -68,9 +68,33 @@
     display: flex;
 }
 
+@media only screen and (max-width: 570px) {
+    .B__Header h1 {
+        font-size: 25px;
+    }
+}
+
 @media only screen and (max-width: 460px) {
     .card__result {
         display: none;
+    }
+}
+
+@media only screen and (max-width: 440px) {
+    .B__Header h1 {
+        font-size: 22px;
+    }
+}
+
+@media only screen and (max-width: 385px) {
+    .B__Header h1 {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 341px) {
+    .B__Header h1 {
+        font-size: 17px;
     }
 }
 

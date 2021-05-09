@@ -252,3 +252,72 @@ select {
     top: 50%;
     left: 50%;
 }
+
+@media only screen and (max-width: 770px) {
+    .select {
+        width: 25em;
+    }
+    .SellDetail {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .Sell__box1 {
+        height: 30vh;
+    }
+    .Sell__box2 {
+        width: 400px;
+    }
+    .Sell__box1__image {
+        min-height: 200px;
+    }
+    .Sell__title_size>label {
+        text-align: center;
+    }
+    .Sell__box2__title {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .Sell__about {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 485px) {
+    .select {
+        width: 20em;
+        margin-left: 35px;
+    }
+    .Sell__box1__image {
+        min-width: 200px;
+    }
+    .Sell__box2 {
+        width: 40vh;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .select {
+        width: 18em;
+        margin-left: 25px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .select {
+        width: 18em;
+        margin-left: 25px;
+    }
+}
