@@ -61,6 +61,7 @@ const Orders = () => {
                                                     <div className="sell__result__right">
                                                         <h5 style={{ fontWeight: 'bold' }}>Order Number: {orderBuy._id}</h5>
                                                         <span style={{ color: '#807a7a', fontWeight: 'bold' }}>{orderBuy.model}</span>
+                                                        <span style={{ color: '#807a7a', fontWeight: 'bold' }}>Size: {orderBuy.size}</span>
                                                         <span style={{ color: '#807a7a', fontWeight: 'bold' }}> {orderBuy.price} €</span>
                                                         <Link to="/contact" style={{ textDecoration: 'none' }}>
                                                             <button className="buy__btn__modal" type="submit">Contact us</button>
@@ -88,10 +89,26 @@ const Orders = () => {
                                                     <div className="sell__result__right">
                                                         <h5 style={{ fontWeight: 'bold' }}>Order Number: {orderBuy._id}</h5>
                                                         <span style={{ color: '#807a7a', fontWeight: 'bold' }}>{orderBuy.model}</span>
+                                                        <span style={{ color: '#807a7a', fontWeight: 'bold' }}>Size: {orderBuy.size}</span>
                                                         <span style={{ color: '#807a7a', fontWeight: 'bold' }}> {orderBuy.price} €</span>
-                                                        <Link to="/contact" style={{ textDecoration: 'none' }}>
-                                                            <button className="buy__btn__modal" type="submit">Contact us</button>
-                                                        </Link>
+                                                        {
+                                                            orderBuy.status ? (
+                                                                <>
+                                                                    <span style={{ color: '#5f9c57', fontWeight: 'bold' }}>Status: Available</span>
+                                                                    <Link to="/contact" style={{ textDecoration: 'none' }}>
+                                                                        <button className="buy__btn__modal" type="submit">Contact us</button>
+                                                                    </Link>
+                                                                </>
+                                                            ) : (
+                                                                <>
+                                                                    <span style={{ color: '#EA5D33', fontWeight: 'bold' }}>Status: Sold</span>
+                                                                    <Link to={`/generate-order/${orderBuy._id}`} style={{ textDecoration: 'none' }}>
+                                                                        <button className="order__btn" type="submit">Generate order</button>
+                                                                    </Link>
+                                                                </>
+                                                            )
+                                                        }
+
                                                     </div>
                                                 </div>
                                             ))
