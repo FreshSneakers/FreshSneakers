@@ -1,0 +1,13 @@
+.success__condition {
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    color: rgb(0, 0, 0);
+}
+
+.success__condition  h5{
+    font-size: 15px;
+}
