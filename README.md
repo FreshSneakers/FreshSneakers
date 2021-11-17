@@ -1,4 +1,4 @@
-#FreshSenakers
+# FreshSenakers
 https://fresh-sneakers-wb.herokuapp.com/
 
 # Getting Started with Create React App
